@@ -50,6 +50,11 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="mondja\" />
+    <Folder Include="static\" />
+    <Folder Include="static\media\" />
+    <Folder Include="static\static-only\" />
+    <Folder Include="static\static\" />
+    <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
