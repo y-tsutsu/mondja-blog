@@ -1,7 +1,9 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 """
 Command-line utility for administrative tasks.
 """
+
+# coding: utf-8
 
 import os
 import sys

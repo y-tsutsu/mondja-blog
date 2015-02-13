@@ -1,6 +1,8 @@
-"""
+﻿"""
 Django settings for mondja project.
 """
+
+# coding: utf-8
 
 from os import path
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))

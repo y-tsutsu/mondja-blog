@@ -54,6 +54,10 @@
     <Folder Include="static\media\" />
     <Folder Include="static\static-only\" />
     <Folder Include="static\static\" />
+    <Folder Include="static\static\bootstrap\" />
+    <Folder Include="static\static\bootstrap\css\" />
+    <Folder Include="static\static\bootstrap\fonts\" />
+    <Folder Include="static\static\bootstrap\js\" />
     <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +91,23 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="static\static\bootstrap\css\blog.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="static\static\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap.css.map" />
+    <Content Include="static\static\bootstrap\css\bootstrap.min.css" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\static\bootstrap\js\bootstrap.js" />
+    <Content Include="static\static\bootstrap\js\bootstrap.min.js" />
+    <Content Include="static\static\bootstrap\js\npm.js" />
+    <Content Include="static\templates\base.html" />
+    <Content Include="static\templates\top.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.mht">

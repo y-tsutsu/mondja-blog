@@ -1,4 +1,4 @@
-"""
+﻿"""
 WSGI config for mondja project.
 
 This module contains the WSGI application used by Django's development server
@@ -13,6 +13,9 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
+
+# coding: utf-8
+
 import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mondja.settings")

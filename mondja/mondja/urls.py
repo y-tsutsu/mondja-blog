@@ -1,6 +1,8 @@
-"""
+﻿"""
 Definition of urls for mondja.
 """
+
+# coding: utf-8
 
 from datetime import datetime
 from django.conf.urls import patterns, url
@@ -13,7 +15,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'app.views.home', name='home'),
+    url(r'^$', 'app.views.top', name='top'),
     url(r'^contact$', 'app.views.contact', name='contact'),
     url(r'^about', 'app.views.about', name='about'),
     url(r'^login/$',
