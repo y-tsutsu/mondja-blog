@@ -2,6 +2,12 @@
 
 {% block main%}
 
+    {% if user.is_anonymous %}
+    You are not member
+    {% else %}
+    Hello! {{user.username}}
+    {% endif %}
+
     {% for item in all_posts %}
 
         <div class="blog-post">

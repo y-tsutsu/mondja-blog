@@ -1,0 +1,30 @@
+﻿{% extends "base.html" %}
+
+{% block main%}
+
+{% if form.errors %}
+<h3 class="bg-danger">Please type a correct password.</h3>
+{% endif %}
+
+<br />
+
+<form method="post" action="." role="form">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="username">User ID</label>
+        <input id="id_username" maxlength="254" name="username" type="text" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input id="id_password" maxlength="4096" name="password" type="password" class="form-control" />
+    </div>
+
+    <input type="submit" value="Login" class="btn btn-info" />
+
+    <br /><br />
+
+</form>
+
+{% endblock %}

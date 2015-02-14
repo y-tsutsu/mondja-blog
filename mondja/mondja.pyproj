@@ -111,6 +111,8 @@
     <Content Include="static\static\bootstrap\js\bootstrap.min.js" />
     <Content Include="static\static\bootstrap\js\npm.js" />
     <Content Include="static\templates\base.html" />
+    <Content Include="static\templates\login.html" />
+    <Content Include="static\templates\logout.html" />
     <Content Include="static\templates\posts\detail.html" />
     <Content Include="static\templates\top.html" />
   </ItemGroup>

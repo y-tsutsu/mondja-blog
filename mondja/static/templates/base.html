@@ -34,6 +34,13 @@
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="{% url 'top' %}">Home</a>
           <a class="blog-nav-item" href="#">About</a>
+
+          {% if user.is_superuser %}
+            <a class="blog-nav-item" href="/logout/">Logout</a>
+          {% else %}
+            <a class="blog-nav-item" href="/login/">Login</a>
+          {% endif %}
+
         </nav>
       </div>
     </div>
