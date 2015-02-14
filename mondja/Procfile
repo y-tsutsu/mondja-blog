@@ -1,0 +1,1 @@
+web: gunicorn --env DJANGO_SETTINGS_MODULE=mondja.settings mondja.wsgi --log-file -

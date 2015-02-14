@@ -74,6 +74,7 @@
     <Folder Include="static\templates\posts\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".env" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -98,6 +99,7 @@
     <Content Include="app\static\app\scripts\respond.js" />
     <Content Include="app\static\app\scripts\respond.min.js" />
     <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="runtime.txt" />
     <Content Include="static\static\bootstrap\css\blog.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css.map" />

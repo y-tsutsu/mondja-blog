@@ -7,11 +7,12 @@ Django settings for mondja project.
 from os import path
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+import os
+DEBUG = os.environ.get('DEBUG') == '1'
 
 ALLOWED_HOSTS = (
     'localhost',
+    'mondja.herokuapp.com',
 )
 
 ADMINS = (
@@ -20,15 +21,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': path.join(PROJECT_ROOT, 'db.sqlite3'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
+    'default': dj_database_url.config()
 }
 
 LOGIN_URL = '/login'
@@ -139,7 +134,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'posts'
+    'gunicorn',
+    'posts',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -176,3 +172,5 @@ LOGIN_URL = '/login/'
 
 # Specify the default test runner.
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
