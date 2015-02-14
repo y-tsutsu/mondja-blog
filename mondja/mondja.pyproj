@@ -42,6 +42,9 @@
     <Compile Include="posts\admin.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="posts\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="posts\models.py" />
     <Compile Include="posts\tests.py" />
     <Compile Include="posts\urls.py">
@@ -113,7 +116,9 @@
     <Content Include="static\templates\base.html" />
     <Content Include="static\templates\login.html" />
     <Content Include="static\templates\logout.html" />
+    <Content Include="static\templates\posts\add_entry.html" />
     <Content Include="static\templates\posts\detail.html" />
+    <Content Include="static\templates\posts\edit_entry.html" />
     <Content Include="static\templates\top.html" />
   </ItemGroup>
   <ItemGroup>

@@ -36,9 +36,10 @@
           <a class="blog-nav-item" href="#">About</a>
 
           {% if user.is_superuser %}
-            <a class="blog-nav-item" href="/logout/">Logout</a>
+            <a class="blog-nav-item" href="/logout/">Log-out</a>
+            <a class="blog-nav-item" href="{% url 'add_entry' %}">Entry</a>
           {% else %}
-            <a class="blog-nav-item" href="/login/">Login</a>
+            <a class="blog-nav-item" href="/login/">Log-in</a>
           {% endif %}
 
         </nav>
