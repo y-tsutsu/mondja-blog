@@ -9,6 +9,7 @@
 
         <br />
 
+        {% if user.is_superuser %}
         <div class="row">
             <form method="post" action="{% url 'edit_entry' post.id %}" class="col-xs-2">
                 {% csrf_token %}
@@ -20,6 +21,7 @@
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </div>
+        {% endif %}
 
     </div><!-- /.blog-post -->
 
