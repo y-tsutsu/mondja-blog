@@ -44,6 +44,9 @@
     </Compile>
     <Compile Include="posts\models.py" />
     <Compile Include="posts\tests.py" />
+    <Compile Include="posts\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="posts\views.py" />
     <Compile Include="posts\__init__.py" />
   </ItemGroup>
@@ -54,11 +57,8 @@
     <Folder Include="app\static\app\content\" />
     <Folder Include="app\static\app\fonts\" />
     <Folder Include="app\static\app\scripts\" />
-    <Folder Include="app\templates\" />
-    <Folder Include="app\templates\app\" />
     <Folder Include="mondja\" />
     <Folder Include="posts\" />
-    <Folder Include="posts\templates\" />
     <Folder Include="static\" />
     <Folder Include="static\media\" />
     <Folder Include="static\static-only\" />
@@ -68,9 +68,9 @@
     <Folder Include="static\static\bootstrap\fonts\" />
     <Folder Include="static\static\bootstrap\js\" />
     <Folder Include="static\templates\" />
+    <Folder Include="static\templates\posts\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="posts\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -95,12 +95,6 @@
     <Content Include="app\static\app\scripts\respond.js" />
     <Content Include="app\static\app\scripts\respond.min.js" />
     <Content Include="app\static\app\scripts\_references.js" />
-    <Content Include="app\templates\app\about.html" />
-    <Content Include="app\templates\app\contact.html" />
-    <Content Include="app\templates\app\index.html" />
-    <Content Include="app\templates\app\layout.html" />
-    <Content Include="app\templates\app\login.html" />
-    <Content Include="app\templates\app\loginpartial.html" />
     <Content Include="static\static\bootstrap\css\blog.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css.map" />
@@ -117,6 +111,7 @@
     <Content Include="static\static\bootstrap\js\bootstrap.min.js" />
     <Content Include="static\static\bootstrap\js\npm.js" />
     <Content Include="static\templates\base.html" />
+    <Content Include="static\templates\posts\detail.html" />
     <Content Include="static\templates\top.html" />
   </ItemGroup>
   <ItemGroup>

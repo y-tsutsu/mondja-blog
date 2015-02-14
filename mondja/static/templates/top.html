@@ -7,7 +7,9 @@
         <div class="blog-post">
             <h2 class="blog-post-title">{{item}}</h2>
             <p class="blog-post-meta">{{item.pub_date}}</p>
-            <p>{{item.content}}</p> 
+            <p>{{item.content | slice:"20"}}</p> 
+
+            <a href="{% url 'detail' item.id %}">See more</a>
         </div><!-- /.blog-post -->
 
     {% endfor%}
