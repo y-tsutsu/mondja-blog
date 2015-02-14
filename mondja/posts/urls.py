@@ -6,4 +6,5 @@ from django.conf.urls import include
 
 urlpatterns = patterns('posts.views',
     url(r'^detail/(?P<id>.*)/', 'detail', name='detail'),
+    url(r'^entry/', 'add_entry', name='add_entry'),
 )
