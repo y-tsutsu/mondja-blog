@@ -8,9 +8,18 @@ from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
+from posts.models import Post
 
 def top(request):
-    return render(request, 'top.html')
+    all_posts = Post.objects.all()
+    return render(
+        request,
+        'top.html',
+        context_instance = RequestContext(request,
+        {
+            'all_posts':all_posts,
+        })
+    )
 
 def home(request):
     """Renders the home page."""

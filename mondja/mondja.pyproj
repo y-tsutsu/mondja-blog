@@ -39,6 +39,13 @@
     <Compile Include="mondja\settings.py" />
     <Compile Include="mondja\urls.py" />
     <Compile Include="mondja\wsgi.py" />
+    <Compile Include="posts\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="posts\models.py" />
+    <Compile Include="posts\tests.py" />
+    <Compile Include="posts\views.py" />
+    <Compile Include="posts\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -50,6 +57,8 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="mondja\" />
+    <Folder Include="posts\" />
+    <Folder Include="posts\templates\" />
     <Folder Include="static\" />
     <Folder Include="static\media\" />
     <Folder Include="static\static-only\" />
@@ -61,6 +70,7 @@
     <Folder Include="static\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="posts\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
