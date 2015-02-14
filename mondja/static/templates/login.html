@@ -6,8 +6,6 @@
 <h3 class="bg-danger">Please type a correct password.</h3>
 {% endif %}
 
-<br />
-
 <form method="post" action="." role="form">
     {% csrf_token %}
 
@@ -21,7 +19,7 @@
         <input id="id_password" maxlength="4096" name="password" type="password" class="form-control" />
     </div>
 
-    <input type="submit" value="Login" class="btn btn-info" />
+    <input type="submit" value="Login" class="btn btn-success" />
 
     <br /><br />
 
