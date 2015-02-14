@@ -5,8 +5,10 @@
     {% if user.is_anonymous %}
     You are not member
     {% else %}
-    Hello! {{user.username}}
+    Hello!! {{user.username}}
     {% endif %}
+
+    <br /><br />
 
     {% for item in all_posts %}
 

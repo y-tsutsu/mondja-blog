@@ -58,3 +58,14 @@ def edit_entry(request, id):
         'posts/edit_entry.html',
         context_instance = RequestContext(request, locals())
     )
+
+@login_required
+def delete_entry(request, id):
+    post = Post.objects.get(id = id)
+
+    if request.method == 'POST':
+        post.delete()
+
+        new_post = PostForm(request.POST or None, instance = post)
+
+        return HttpResponseRedirect('/')

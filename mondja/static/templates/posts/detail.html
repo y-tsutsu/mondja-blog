@@ -9,10 +9,17 @@
 
         <br />
 
-        <form method="post" action="{% url 'edit_entry' post.id %}">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-warning">Edit</button>
-        </form>
+        <div class="row">
+            <form method="post" action="{% url 'edit_entry' post.id %}" class="col-xs-2">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+
+            <form method="post" action="{% url 'delete_entry' post.id %}" class="col-xs-2">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
 
     </div><!-- /.blog-post -->
 
