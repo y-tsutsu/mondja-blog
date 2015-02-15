@@ -35,7 +35,7 @@
         </div>
 
         <div class="row" style="margin-top:30px;">
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-xs-2">
                 {% if new_post %}
                     <a href="{% url 'detail' new_post.id %}">
                         <i class="fa fa-arrow-circle-left fa-lg"></i>
@@ -43,7 +43,7 @@
                     </a>
                 {% endif %}
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 col-xs-2">
                 {% if old_post %}
                     <a href="{% url 'detail' old_post.id %}">
                         Older
