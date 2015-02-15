@@ -23,22 +23,40 @@
     {% endfor%}
 
     <!-- Paginator -->
-    <ul class="pagination">
-        {% if all_posts.has_previous %}
-            <li><a href="?page={{ all_posts.previous_page_number }}">Previous</a></li>
-        {% endif %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if all_posts.has_previous %}
+                <a href="?page={{ all_posts.previous_page_number }}"><i class="fa fa-hand-o-left"></i>Previous</a>
+            {% endif %}
 
-        {% for number in all_posts.paginator.page_range %}
-            {% ifequal number all_posts.number %}
-                <li class="active"><a href="?page={{number}}">{{number}}</a></li>
-            {% else %}
-                <li><a href="?page={{number}}">{{number}}</a></li>
-            {% endifequal %}
-        {% endfor %}
+            <span class="current">
+                　Page {{ all_posts.number }} of {{ all_posts.paginator.num_pages }}.　
+            </span>
 
-        {% if all_posts.has_next %}
-            <li><a href="?page={{ all_posts.next_page_number }}">Next</a></li>
-        {% endif %}
-    </ul>
+            {% if all_posts.has_next %}
+                <a href="?page={{ all_posts.next_page_number }}">Next<i class="fa fa-hand-o-right"></i></a>
+            {% endif %}
+        </span>
+    </div>
+
+    <!--
+        <ul class="pagination">
+            {% if all_posts.has_previous %}
+                <li><a href="?page={{ all_posts.previous_page_number }}">Previous</a></li>
+            {% endif %}
+
+            {% for number in all_posts.paginator.page_range %}
+                {% ifequal number all_posts.number %}
+                    <li class="active"><a href="?page={{number}}">{{number}}</a></li>
+                {% else %}
+                    <li><a href="?page={{number}}">{{number}}</a></li>
+                {% endifequal %}
+            {% endfor %}
+
+            {% if all_posts.has_next %}
+                <li><a href="?page={{ all_posts.next_page_number }}">Next</a></li>
+            {% endif %}
+        </ul>
+    -->
 
 {% endblock %}
