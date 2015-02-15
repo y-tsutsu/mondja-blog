@@ -22,6 +22,25 @@
         </div>
         {% endif %}
 
+        <div class="row">
+            <div class="col-sm-2">
+                {% if new_post %}
+                    <a href="{% url 'detail' new_post.id %}">
+                        <i class="fa fa-arrow-circle-left fa-lg"></i>
+                        Newer
+                    </a>
+                {% endif %}
+            </div>
+            <div class="col-sm-2">
+                {% if old_post %}
+                    <a href="{% url 'detail' old_post.id %}">
+                        Older
+                        <i class="fa fa-arrow-circle-right fa-lg"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
     </div><!-- /.blog-post -->
 
 {% endblock %}

@@ -10,13 +10,24 @@ from posts.forms import PostForm
 
 def detail(request, id):
     post = Post.objects.get(id = id)
+
+    find = False
+    new_post = None
+    old_post = None
+    for p in Post.objects.all().order_by('-pub_date'):
+        if find:
+            old_post = p
+            break
+
+        if p.id == post.id:
+            find = True
+
+        if not find: new_post = p
+
     return render(
         request,
         'posts/detail.html',
-        context_instance = RequestContext(request,
-        {
-            'post':post,
-        })
+        context_instance = RequestContext(request, locals())
     )
 
 @login_required
