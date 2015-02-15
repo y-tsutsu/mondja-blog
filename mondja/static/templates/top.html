@@ -18,8 +18,27 @@
             <p>{{item.content | slice:"20"}}</p> 
 
             <a href="{% url 'detail' item.id %}"><i class="fa fa-eye"></i>See more</a>
-        </div><!-- /.blog-post -->
+        </div>
 
     {% endfor%}
+
+    <!-- Paginator -->
+    <ul class="pagination">
+        {% if all_posts.has_previous %}
+            <li><a href="?page={{ all_posts.previous_page_number }}">Previous</a></li>
+        {% endif %}
+
+        {% for number in all_posts.paginator.page_range %}
+            {% ifequal number all_posts.number %}
+                <li class="active"><a href="?page={{number}}">{{number}}</a></li>
+            {% else %}
+                <li><a href="?page={{number}}">{{number}}</a></li>
+            {% endifequal %}
+        {% endfor %}
+
+        {% if all_posts.has_next %}
+            <li><a href="?page={{ all_posts.next_page_number }}">Next</a></li>
+        {% endif %}
+    </ul>
 
 {% endblock %}

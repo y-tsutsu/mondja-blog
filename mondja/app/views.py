@@ -7,44 +7,27 @@ Definition of views.
 from django.shortcuts import render
 from django.http import HttpRequest
 from django.template import RequestContext
+from django .core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from posts.models import Post
 
 def top(request):
     all_posts = Post.objects.all()
+    paginator = Paginator(all_posts, 5)
+    page = request.GET.get('page')
+
+    try:
+        all_posts = paginator.page(page)
+    except PageNotAnInteger:
+        all_posts = paginator.page(1)
+    except EmptyPage:
+        all_posts = paginator.page(paginator.num_pages)
     return render(
         request,
         'top.html',
         context_instance = RequestContext(request,
         {
             'all_posts':all_posts,
-        })
-    )
-
-def home(request):
-    """Renders the home page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/index.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Home Page',
-            'year':datetime.now().year,
-        })
-    )
-
-def contact(request):
-    """Renders the contact page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/contact.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Contact',
-            'message':'Your contact page.',
-            'year':datetime.now().year,
         })
     )
 
