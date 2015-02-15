@@ -1,0 +1,34 @@
+﻿{% extends "base.html" %}
+
+{% block main%}
+
+<div class="row">
+    <div class="col-sm-3">
+        <img src="{{STATIC_URL}}images/profile.png/" width="120px;" class="img img-circle">
+    </div>
+
+    <div class="col-sm-9" style="margin-top:40px;">
+        <h1>TSUTSU</h1>
+    </div>
+</div>
+
+<div class="row" style="margin-top:20px;">
+    <div class="col-sm-12">
+        <p>
+            Welcom to my Mondja Blog. I'm a webmaster of this blog. 
+            My hobby is to eat various kinds of Mondja.
+            <br />
+            Thank you for visiting my blog!!
+        </p>
+    </div>
+</div>
+
+<div class="row" style="margin-top:20px;">
+    <div class="col-sm-2"><i class="fa fa-globe"></i>Japan</div>
+    <div class="col-sm-2"><i class="fa fa-heart"></i>Python</div>
+    <div class="col-sm-3"><a href="https://github.com/y-tsutsu/mondja" target="_blank"><i class="fa fa-github"></i>y-tsutsu</a></div>
+</div>
+
+
+
+{% endblock %}

@@ -70,6 +70,7 @@
     <Folder Include="static\static\font-awesome\fonts\" />
     <Folder Include="static\static\font-awesome\less\" />
     <Folder Include="static\static\font-awesome\scss\" />
+    <Folder Include="static\static\images\" />
     <Folder Include="static\templates\" />
     <Folder Include="static\templates\posts\" />
   </ItemGroup>
@@ -127,6 +128,7 @@
     <Content Include="static\static\font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="static\static\font-awesome\scss\_stacked.scss" />
     <Content Include="static\static\font-awesome\scss\_variables.scss" />
+    <Content Include="static\templates\about.html" />
     <Content Include="static\templates\base.html" />
     <Content Include="static\templates\login.html" />
     <Content Include="static\templates\logout.html" />

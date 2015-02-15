@@ -12,7 +12,7 @@ from datetime import datetime
 from posts.models import Post
 
 def top(request):
-    all_posts = Post.objects.all()
+    all_posts = Post.objects.all().order_by('-pub_date')
     paginator = Paginator(all_posts, 5)
     page = request.GET.get('page')
 
@@ -33,14 +33,10 @@ def top(request):
 
 def about(request):
     """Renders the about page."""
-    assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/about.html',
+        'about.html',
         context_instance = RequestContext(request,
         {
-            'title':'About',
-            'message':'Your application description page.',
-            'year':datetime.now().year,
         })
     )
