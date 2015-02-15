@@ -5,8 +5,12 @@
     <div class="blog-post">
         <h2 class="blog-post-title">{{post.title}}</h2>
         <p class="blog-post-meta">{{post.pub_date}}</p>
-        <p>{{post.content | linebreaksbr}}</p> 
 
+        <hr />
+
+        <div style="font-size:20px;">{{post.content | linebreaksbr}}</div> 
+
+        <hr />
         <br />
 
         {% if user.is_superuser %}
@@ -22,7 +26,15 @@
         </div>
         {% endif %}
 
+        <br />
+
         <div class="row">
+            <div class="col-sm-12">
+                <h3 style="color:#CCC;">This is expressed by <strong>{{post.get_total}}</strong> letters</h3>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:30px;">
             <div class="col-sm-2">
                 {% if new_post %}
                     <a href="{% url 'detail' new_post.id %}">
