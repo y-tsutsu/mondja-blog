@@ -22,6 +22,7 @@ def top(request):
         all_posts = paginator.page(1)
     except EmptyPage:
         all_posts = paginator.page(paginator.num_pages)
+
     return render(
         request,
         'top.html',
