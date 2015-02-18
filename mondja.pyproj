@@ -75,6 +75,7 @@
     <Folder Include="static\templates\posts\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".env" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="runtime.txt" />
