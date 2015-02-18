@@ -129,6 +129,8 @@
     <Content Include="static\static\font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="static\static\font-awesome\scss\_stacked.scss" />
     <Content Include="static\static\font-awesome\scss\_variables.scss" />
+    <Content Include="static\static\images\profile.png" />
+    <Content Include="static\static\images\python.ico" />
     <Content Include="static\templates\about.html" />
     <Content Include="static\templates\base.html" />
     <Content Include="static\templates\login.html" />
