@@ -15,11 +15,15 @@
     {% for item in all_posts %}
 
         <div class="blog-post">
-            <h2 class="blog-post-title">{{item}}</h2>
-            <p class="blog-post-meta"><i class="fa fa-clock-o"></i>{{item.pub_date}}</p>
-            <p>{{item.content | slice:"20"}}</p> 
-
-            <a href="{% url 'detail' item.id %}"><i class="fa fa-eye"></i>See more</a>
+            <h4 class="blog-post-title">{{item}}</h4>
+            <p class="blog-post-meta"><i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}</p>
+            <p>{{item.content | slice:"20"}}</p>
+            <hr />
+            <p style="font-size:17px;">
+                This is expressed by <strong>{{item.get_total}}</strong> letters. 
+                <a href="{% url 'detail' item.id %}"><i class="fa fa-eye"></i>See more</a>
+            </p>
+            <hr />
         </div>
 
     {% endfor%}
