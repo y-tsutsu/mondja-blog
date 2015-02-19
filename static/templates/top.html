@@ -24,7 +24,7 @@
                 <a href="{% url 'detail' item.id %}"><i class="fa fa-eye"></i>See more</a>
             </p>
             <hr />
-            <div class="progress">
+            <div class="progress progress-striped active">
                 <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{item.get_progress_value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{item.get_progress_value}}%">
                     <span class="sr-only">{{item.get_progress_value}}% Complete</span>
                 </div>
