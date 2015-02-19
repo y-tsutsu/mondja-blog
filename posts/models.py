@@ -17,6 +17,9 @@ class Post(models.Model):
     def get_total(self):
         return len(self.content)
 
+    def get_progress_value(self):
+        return min(self.get_total() / 100 * 100, 100)
+
     def get_absolute_url(self):
         return '/entries/detail/{0}'.format(self.id)
 
