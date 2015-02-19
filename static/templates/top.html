@@ -17,7 +17,7 @@
         <div class="blog-post">
             <h4 class="blog-post-title" style="color:#4682b4;">{{item}}</h4>
             <p class="blog-post-meta"><i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}</p>
-            <p>{{item.content | slice:"20"}}</p>
+            <p>{{item.content | slice:"30"}}{% if item.is_over_length %}．．．{% endif %}</p>
             <hr />
             <p style="font-size:16px; color:#556b2f;">
                 This is expressed by <strong>{{item.get_total}}</strong> letters. 

@@ -20,6 +20,9 @@ class Post(models.Model):
     def get_progress_value(self):
         return min(self.get_total() / 100 * 100, 100)
 
+    def is_over_length(self):
+        return 30 < self.get_total()
+
     def get_absolute_url(self):
         return '/entries/detail/{0}'.format(self.id)
 
