@@ -4,13 +4,13 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>mondja</Name>
     <RootNamespace>mondja</RootNamespace>
-    <InterpreterId>{5d6d9836-63a0-497b-9b37-246365c692a6}</InterpreterId>
+    <InterpreterId>{d6b39acd-5872-4767-a017-624d4c5409f7}</InterpreterId>
     <InterpreterVersion>3.4</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6356471f-f850-4c5c-824b-645fd2d98ca3</ProjectGuid>
+    <ProjectGuid>357968bb-c683-4c14-9abd-ec08d703d744</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <StartupFile>manage.py</StartupFile>
@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
-      <Id>{5d6d9836-63a0-497b-9b37-246365c692a6}</Id>
+      <Id>{d6b39acd-5872-4767-a017-624d4c5409f7}</Id>
       <BaseInterpreter>{9a7a9026-48c1-4688-9d5d-e5699d47d074}</BaseInterpreter>
       <Version>3.4</Version>
       <Description>env (Python 64-bit 3.4)</Description>
