@@ -5,7 +5,7 @@ Monja blog with Django
 Djangoを使ったシンプルなBlogアプリ（Python Tools for Visual Studio）
 
 # Requirements
-* python==3.4.1
+* python==3.4.2
 * django==1.7.4
 * django-dotenv==1.3.0
 * dj-database-url==0.3.0
