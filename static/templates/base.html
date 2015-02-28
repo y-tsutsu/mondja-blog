@@ -40,14 +40,14 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item {% ifequal request.path '/' %} active {% endifequal %}" href="{% url 'top' %}"><i class="fa fa-home"></i> Home</a>
-          <a class="blog-nav-item {% ifequal request.path '/about/' %} active {% endifequal %}" href="/about/"><i class="fa fa-info-circle"></i> About</a>
+          <a class="blog-nav-item {% ifequal request.path '/' %} active {% endifequal %}" href="{% url 'top' %}"><i class="fa fa-home"></i>Home</a>
+          <a class="blog-nav-item {% ifequal request.path '/about/' %} active {% endifequal %}" href="/about/"><i class="fa fa-info-circle"></i>About</a>
 
           {% if user.is_superuser %}
-            <a class="blog-nav-item {% ifequal request.path '/logout/' %} active {% endifequal %}" href="/logout/"><i class="fa fa-sign-out"></i> Log-out</a>
-            <a class="blog-nav-item {% ifequal request.path '/posts/entry/' %} active {% endifequal %}" href="{% url 'add_entry' %}"><i class="fa fa-pencil"></i> Entry</a>
+            <a class="blog-nav-item {% ifequal request.path '/logout/' %} active {% endifequal %}" href="/logout/"><i class="fa fa-sign-out"></i>Log-out</a>
+            <a class="blog-nav-item {% ifequal request.path '/posts/entry/' %} active {% endifequal %}" href="{% url 'add_entry' %}"><i class="fa fa-pencil"></i>Entry</a>
           {% else %}
-            <a class="blog-nav-item {% ifequal request.path '/login/' %} active {% endifequal %}" href="/login/"><i class="fa fa-sign-in"></i> Log-in</a>
+            <a class="blog-nav-item {% ifequal request.path '/login/' %} active {% endifequal %}" href="/login/"><i class="fa fa-sign-in"></i>Log-in</a>
           {% endif %}
 
         </nav>

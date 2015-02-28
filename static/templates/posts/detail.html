@@ -18,12 +18,12 @@
         <div class="row">
             <form method="post" action="{% url 'edit_entry' post.id %}" class="col-xs-3 col-md-2">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</button>
             </form>
             <form method="post" action="{% url 'delete_entry' post.id %}" class="col-xs-3 col-md-2">
                 {% csrf_token %}
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                    <i class="fa fa-trash-o"></i> Delete
+                    <i class="fa fa-trash-o"></i>Delete
                 </button>
             </form>
         </div>
@@ -42,11 +42,11 @@
                         <div class="row">
                             <form method="post" action="{% url 'delete_entry' post.id %}" class="col-xs-4 col-md-2 pull-right">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</button>
                             </form>
                             <form class="col-xs-4 col-md-2 pull-right">
                                 {% csrf_token %}
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
                             </form>
                         </div>
                     </div>
@@ -65,17 +65,17 @@
         </div>
 
         <div class="row" style="margin-top:30px;">
-            <div class="col-sm-2 col-xs-6">
+            <div class="col-sm-2 col-xs-4">
                 {% if new_post %}
                     <a href="{% url 'detail' new_post.id %}">
-                        <i class="fa fa-arrow-circle-left fa-lg"></i> Newer
+                        <i class="fa fa-arrow-circle-left fa-lg"></i>Newer
                     </a>
                 {% endif %}
             </div>
-            <div class="col-sm-2 col-xs-6">
+            <div class="col-sm-2 col-xs-4">
                 {% if old_post %}
                     <a href="{% url 'detail' old_post.id %}">
-                        Older <i class="fa fa-arrow-circle-right fa-lg"></i>
+                        Older<i class="fa fa-arrow-circle-right fa-lg"></i>
                     </a>
                 {% endif %}
             </div>

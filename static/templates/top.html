@@ -21,7 +21,7 @@
             <hr />
             <p style="font-size:16px; color:#556b2f;">
                 This is expressed by <strong>{{item.get_total}}</strong> letters. 
-                <a href="{% url 'detail' item.id %}"><i class="fa fa-eye"></i> See more</a>
+                <a href="{% url 'detail' item.id %}"><i class="fa fa-eye"></i>See more</a>
             </p>
             <hr />
             <div class="progress progress-striped active">
@@ -38,7 +38,7 @@
     <div class="pagination">
         <span class="step-links">
             {% if all_posts.has_previous %}
-                <a href="?page={{ all_posts.previous_page_number }}"><i class="fa fa-hand-o-left"></i> Previous</a>
+                <a href="?page={{ all_posts.previous_page_number }}"><i class="fa fa-hand-o-left"></i>Previous</a>
             {% endif %}
 
             <span class="current">
@@ -46,7 +46,7 @@
             </span>
 
             {% if all_posts.has_next %}
-                <a href="?page={{ all_posts.next_page_number }}">Next <i class="fa fa-hand-o-right"></i></a>
+                <a href="?page={{ all_posts.next_page_number }}">Next<i class="fa fa-hand-o-right"></i></a>
             {% endif %}
         </span>
     </div>
