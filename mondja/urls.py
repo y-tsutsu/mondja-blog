@@ -20,6 +20,9 @@ urlpatterns = patterns('',
     # Posts
     url(r'^posts/', include('posts.urls')),
 
+    # Galleries
+    url(r'^galleries/', include('galleries.urls')),
+
     # About
     url(r'^about/', 'app.views.about', name = 'about'),
 

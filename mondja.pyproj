@@ -34,6 +34,11 @@
     <Compile Include="app\tests.py" />
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
+    <Compile Include="galleries\models.py" />
+    <Compile Include="galleries\tests.py" />
+    <Compile Include="galleries\urls.py" />
+    <Compile Include="galleries\views.py" />
+    <Compile Include="galleries\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="mondja\__init__.py" />
     <Compile Include="mondja\settings.py" />
@@ -55,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
+    <Folder Include="galleries\" />
     <Folder Include="mondja\" />
     <Folder Include="posts\" />
     <Folder Include="static\" />
@@ -72,6 +78,7 @@
     <Folder Include="static\static\font-awesome\scss\" />
     <Folder Include="static\static\images\" />
     <Folder Include="static\templates\" />
+    <Folder Include="static\templates\galleries\" />
     <Folder Include="static\templates\posts\" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +142,7 @@
     <Content Include="static\static\images\python.ico" />
     <Content Include="static\templates\about.html" />
     <Content Include="static\templates\base.html" />
+    <Content Include="static\templates\galleries\images.html" />
     <Content Include="static\templates\login.html" />
     <Content Include="static\templates\logout.html" />
     <Content Include="static\templates\posts\add_entry.html" />

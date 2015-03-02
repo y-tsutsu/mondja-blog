@@ -50,6 +50,8 @@
             <a class="blog-nav-item {% ifequal request.path '/login/' %} active {% endifequal %}" href="/login/"><i class="fa fa-sign-in"></i>Log-in</a>
           {% endif %}
 
+          <a class="blog-nav-item {% ifequal request.path '/galleries/' %} active {% endifequal %}" href="{% url 'images' %}"><i class="fa fa-photo"></i>Gallery</a>
+
         </nav>
       </div>
     </div>
