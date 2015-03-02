@@ -34,6 +34,7 @@
     <Compile Include="app\tests.py" />
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
+    <Compile Include="galleries\forms.py" />
     <Compile Include="galleries\models.py" />
     <Compile Include="galleries\tests.py" />
     <Compile Include="galleries\urls.py" />
