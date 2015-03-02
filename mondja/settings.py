@@ -136,6 +136,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'gunicorn',
     'posts',
+    'galleries',
 )
 
 # A sample logging configuration. The only tangible logging

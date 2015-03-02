@@ -65,6 +65,7 @@
     <Folder Include="posts\" />
     <Folder Include="static\" />
     <Folder Include="static\media\" />
+    <Folder Include="static\media\photo_images\" />
     <Folder Include="static\static-only\" />
     <Folder Include="static\static\" />
     <Folder Include="static\static\bootstrap\" />

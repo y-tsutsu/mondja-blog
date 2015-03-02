@@ -2,6 +2,29 @@
 
 {% block main%}
 
-Hello, galleries!!
+<div class="row">
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+
+        <form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group" style="padding-bottom:10px;">
+                <label for="id_description">Description</label>
+                <input id="id_description" maxlength="200" name="description" type="text" class="form-control">
+            </div>
+
+            <div class="form-group" style="padding-bottom:10px;">
+                <input id="id_image" name="image" type="file">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>Save</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
 
 {% endblock %}
