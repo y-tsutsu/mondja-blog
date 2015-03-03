@@ -1,6 +1,7 @@
 ﻿# coding: utf-8
 
 from django.shortcuts import *
+from django.contrib.auth.decorators import login_required
 from galleries.forms import PhotoImageForm
 from galleries.models import PhotoImage
 
@@ -21,3 +22,12 @@ def images(request):
         'galleries/images.html',
         context_instance = RequestContext(request, locals())
     )
+
+@login_required
+def delete_image(request, id):
+    image = PhotoImage.objects.get(id = id)
+
+    if request.method == 'POST':
+        image.delete()
+
+        return HttpResponseRedirect('/galleries/')
