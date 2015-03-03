@@ -7,9 +7,9 @@ Definition of models.
 from django.db import models
 
 class PhotoImage(models.Model):
-    description = models.CharField(max_length = 200)
+    description = models.CharField(max_length = 16)
     pub_date = models.DateTimeField('date published', auto_now_add = True)
-    image = models.ImageField(upload_to = '/media/photo_images/')
+    image = models.ImageField(upload_to = 'photo_images')
 
     def __str__(self):
         return self.description

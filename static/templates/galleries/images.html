@@ -3,6 +3,17 @@
 {% block main%}
 
 <div class="row">
+    {% for item in all_images %}
+        <div class="col-md-4 col-sm-4 col-xs-6">
+            <img src="{{MEDIA_URL}}{{item.image}}" class="img-thumbnail" width="200px">
+            <h4>{{ item }}</h4>
+        </div>
+    {% endfor %}
+</div>
+
+{% if user.is_superuser %}
+
+<div class="row">
 
     <div class="col-md-4 col-sm-4 col-xs-12">
 
@@ -11,7 +22,7 @@
 
             <div class="form-group" style="padding-bottom:10px;">
                 <label for="id_description">Description</label>
-                <input id="id_description" maxlength="200" name="description" type="text" class="form-control">
+                <input id="id_description" maxlength="16" name="description" type="text" class="form-control">
             </div>
 
             <div class="form-group" style="padding-bottom:10px;">
@@ -26,5 +37,7 @@
     </div>
 
 </div>
+
+{% endif %}
 
 {% endblock %}
