@@ -8,11 +8,13 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import models as usermodels
+import cloudinary
+from cloudinary.models import CloudinaryField
 
 class PhotoImage(models.Model):
     description = models.CharField(max_length = 64)
     pub_date = models.DateTimeField('date published', auto_now_add = True)
-    image = models.ImageField(upload_to = 'photo_images')
+    image = cloudinary.models.CloudinaryField('photo_images')
     user = models.ForeignKey(usermodels.User)
 
     def __str__(self):

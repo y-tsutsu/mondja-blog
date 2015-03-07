@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'gunicorn',
     'markdown2',
+    'cloudinary',
     'posts',
     'galleries',
     'memo',
@@ -188,3 +189,9 @@ LOGIN_URL = '/login/'
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+CLOUDINARY = {
+    'cloud_name': 'hcyjuho0s',
+    'api_key': '444938534815269',
+    'api_secret': 'aKjIGNp7zJ9KMfbF_u_Y32DKKWQ',
+}

@@ -2,11 +2,13 @@
 
 {% block main %}
 
+{% load cloudinary %}
+
 <div class="row">
     {% for item in all_images %}
 
         <div class="col-md-4 col-sm-4 col-xs-6">
-            <img src="{{MEDIA_URL}}{{item.image}}" class="img-thumbnail" width="200">
+            {% cloudinary item.image width=200 crop="fill" class="img-thumbnail" %}
             <h4>{{ item }}</h4>
 
             {% if user.is_superuser %}
