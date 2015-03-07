@@ -6,7 +6,7 @@
     {% for item in all_images %}
 
         <div class="col-md-4 col-sm-4 col-xs-6">
-            <img src="{{MEDIA_URL}}{{item.image}}" class="img-thumbnail" width="200px">
+            <img src="{{MEDIA_URL}}{{item.image}}" class="img-thumbnail" width="200">
             <h4>{{ item }}</h4>
 
             {% if user.is_superuser %}
@@ -55,7 +55,7 @@
 
 <hr />
 
-<form role="form" method="post" action="." enctype="multipart/form-data">
+<form role="form" method="post" action='{% url "add_image" %}' enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="form-group">
