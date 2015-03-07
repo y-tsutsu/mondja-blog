@@ -11,6 +11,8 @@ Djangoを使ったシンプルなBlogアプリ（Python Tools for Visual Studio�
 * dj-database-url==0.3.0
 * gunicorn==19.2.1
 * whitenoise==1.0.6
+* psycopg2==2.5.2
+* cloudinary==1.0.21
 
 # Run
 ~~~
