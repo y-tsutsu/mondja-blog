@@ -1,7 +1,7 @@
 ﻿# coding: utf-8
 
 from django.shortcuts import *
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from galleries.forms import PhotoImageForm
 from galleries.models import PhotoImage
 
@@ -14,7 +14,7 @@ def images(request):
         context_instance = RequestContext(request, locals())
     )
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def add_image(request):
     if request.method == 'POST':
         image_form = PhotoImageForm(request.POST or None, request.FILES or None)
@@ -25,7 +25,7 @@ def add_image(request):
 
     return HttpResponseRedirect('/galleries/')
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def delete_image(request, id):
     image = PhotoImage.objects.get(id = id)
 

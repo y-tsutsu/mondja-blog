@@ -3,7 +3,7 @@
 from django.shortcuts import *
 from django.http import HttpRequest
 from django.template import RequestContext
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from datetime import datetime
 from posts.models import Post
 from posts.forms import PostForm
@@ -30,7 +30,7 @@ def detail(request, id):
         context_instance = RequestContext(request, locals())
     )
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def add_entry(request):
     entry_form = PostForm
 
@@ -51,7 +51,7 @@ def add_entry(request):
         })
     )
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def edit_entry(request, id):
     post = Post.objects.get(id = id)
 
@@ -70,7 +70,7 @@ def edit_entry(request, id):
         context_instance = RequestContext(request, locals())
     )
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def delete_entry(request, id):
     post = Post.objects.get(id = id)
 
