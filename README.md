@@ -28,7 +28,7 @@ http://mondja.herokuapp.com
 
 # Link
 * http://www.python.jp
-* http://www.djangoproject.jp
+* http://djangoproject.jp
 * http://getbootstrap.com
 * http://fortawesome.github.io/Font-Awesome/
 * https://www.heroku.com
