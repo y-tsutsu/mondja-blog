@@ -25,6 +25,9 @@ urlpatterns = patterns('',
     # Galleries
     url(r'^galleries/', include('galleries.urls')),
 
+    # Memo
+    url(r'^memo/', include('memo.urls')),
+
     # About
     url(r'^about/', 'app.views.about', name = 'about'),
 
