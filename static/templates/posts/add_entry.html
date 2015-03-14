@@ -2,7 +2,7 @@
 
 {% block main%}
 
-<h4>Make new entry</h4>
+<h4>Blog書き込み中．．．</h4>
 
 <form class="form-inline" role="form" method="post" action=".">{% csrf_token %}
 
@@ -19,6 +19,8 @@
     </div>
 
     <br />
+
+    <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
 
     <div class="form-group">
         <button type="submit" class=" btn btn-success"><i class="fa fa-save"></i>Save</button>

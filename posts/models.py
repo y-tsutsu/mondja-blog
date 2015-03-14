@@ -5,11 +5,13 @@ Definition of models.
 # coding: utf-8
 
 from django.db import models
+from django.contrib.auth import models as usermodels
 
 class Post(models.Model):
     title = models.CharField(max_length = 200)
     content = models.TextField(max_length = 10000)
     pub_date = models.DateTimeField('date published', auto_now_add = True)
+    user = models.ForeignKey(usermodels.User)
 
     def __str__(self):
         return self.title

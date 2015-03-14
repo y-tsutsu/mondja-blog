@@ -5,11 +5,13 @@ Definition of models.
 # coding: utf-8
 
 from django.db import models
+from django.contrib.auth import models as usermodels
 
 class PhotoImage(models.Model):
     description = models.CharField(max_length = 64)
     pub_date = models.DateTimeField('date published', auto_now_add = True)
     image = models.ImageField(upload_to = 'photo_images')
+    user = models.ForeignKey(usermodels.User)
 
     def __str__(self):
         return self.description
