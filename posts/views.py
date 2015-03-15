@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from datetime import datetime
 from posts.models import Post
 from posts.forms import PostForm
+from posts.forms import CommentForm
 
 def detail(request, id):
     post = Post.objects.get(id = id)
@@ -80,3 +81,15 @@ def delete_entry(request, id):
         new_post = PostForm(request.POST or None, instance = post)
 
         return HttpResponseRedirect('/')
+
+@user_passes_test(lambda u: u.is_superuser)
+def comment_entry(request, id):
+    if request.method == 'POST':
+        post = Post.objects.get(id = id)
+        new_comment = CommentForm(request.POST or None)
+
+        if new_comment.is_valid():
+            new_comment = new_comment.save(commit = False)
+            new_comment.save()
+
+    return HttpResponseRedirect('/posts/detail/{0}/'.format(id))

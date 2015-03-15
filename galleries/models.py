@@ -4,7 +4,9 @@ Definition of models.
 
 # coding: utf-8
 
+import datetime
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth import models as usermodels
 
 class PhotoImage(models.Model):

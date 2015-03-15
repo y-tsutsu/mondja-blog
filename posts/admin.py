@@ -1,7 +1,11 @@
 ﻿# coding: utf-8
 
 from django.contrib import admin
-from posts.models import Post
+from posts.models import Post, Comment
+
+class CommentInline(admin.TabularInline):
+    model = Comment
+    extra = 1
 
 class PostAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -12,5 +16,6 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['title']
     date_hierarchy = 'pub_date'
+    inlines = [CommentInline]
 
-admin.site.register(Post)
+admin.site.register(Post, PostAdmin)

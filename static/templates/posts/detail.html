@@ -18,12 +18,18 @@
         <div class="row">
             <form method="post" action="{% url 'edit_entry' post.id %}" class="col-xs-3 col-md-2">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</button>
+                <button type="submit" class="btn btn-primary" style="width:80px;"><i class="fa fa-edit"></i>Edit</button>
             </form>
             <form method="post" action="{% url 'delete_entry' post.id %}" class="col-xs-3 col-md-2">
                 {% csrf_token %}
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="width:80px;">
                     <i class="fa fa-trash-o"></i>Delete
+                </button>
+            </form>
+            <form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-3 col-md-2">
+                {% csrf_token %}
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2" style="width:100px;">
+                    <i class="fa fa-comments-o"></i>Comment
                 </button>
             </form>
         </div>
@@ -53,6 +59,37 @@
                 </div>
             </div>
         </div>
+
+        <form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-5 col-md-3 pull-right">
+            {% csrf_token %}
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">The Mondja Blog</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-inline" role="form">
+                                <textarea cols="75" id="id_comment" class="form-control" name="comment" rows="3" placeholder="Type a comment" required ></textarea>
+                                <input type="hidden" name="post" value="{{post.id}}" id="id_user" />
+                                <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-xs-5 col-md-3 pull-right">
+                                    <button type="submit" class="btn btn-success" style="width:100px;"><i class="fa fa-comments-o"></i>Comment</button>
+                                </div>
+                                <div class="col-xs-3 col-md-2 pull-right">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
         {% endif %}
 
