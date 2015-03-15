@@ -5,12 +5,12 @@ from django.http import HttpRequest
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required, user_passes_test
 from datetime import datetime
-from posts.models import Post
-from posts.forms import PostForm
-from posts.forms import CommentForm
+from posts.models import Post, Comment
+from posts.forms import PostForm, CommentForm
 
 def detail(request, id):
     post = Post.objects.get(id = id)
+    comments = Comment.objects.filter(post = post).order_by('pub_date')
 
     find = False
     new_post = None

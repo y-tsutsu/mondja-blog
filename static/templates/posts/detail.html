@@ -11,6 +11,18 @@
         <div style="font-size:20px;">{{post.content | linebreaksbr}}</div> 
 
         <hr />
+
+        {% for comment in comments %}
+            <div class="alert alert-info" role="alert">
+                <strong>{{comment.user}} > </strong>
+                {{comment.comment}}
+            </div>
+        {% endfor%}
+
+        {% ifnotequal comments.count 0 %}
+            <hr />
+        {% endifnotequal %}
+
         <br />
 
         {% if user.is_superuser %}
@@ -34,6 +46,7 @@
             </form>
         </div>
 
+        <!-- 削除確認ダイアログ -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -60,6 +73,7 @@
             </div>
         </div>
 
+        <!-- コメント記入ダイアログ -->
         <form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-5 col-md-3 pull-right">
             {% csrf_token %}
             <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -92,8 +106,6 @@
         </form>
 
         {% endif %}
-
-        <br />
 
         <div class="row">
             <div class="col-sm-12">
