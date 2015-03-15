@@ -110,6 +110,8 @@
     <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="static\static\bootstrap\js\bootstrap.js" />
     <Content Include="static\static\bootstrap\js\bootstrap.min.js" />
+    <Content Include="static\static\bootstrap\js\docs.min.js" />
+    <Content Include="static\static\bootstrap\js\ie10-viewport-bug-workaround.js" />
     <Content Include="static\static\bootstrap\js\jquery-1.11.2.min.js" />
     <Content Include="static\static\bootstrap\js\npm.js" />
     <Content Include="static\static\font-awesome\css\font-awesome.css" />
