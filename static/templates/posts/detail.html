@@ -40,7 +40,7 @@
             </form>
             <form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-3 col-md-2">
                 {% csrf_token %}
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2" style="width:100px;">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2" style="width:100px;">
                     <i class="fa fa-comments-o"></i>Comment
                 </button>
             </form>
@@ -93,7 +93,7 @@
                         <div class="modal-footer">
                             <div class="row">
                                 <div class="col-xs-5 col-md-3 pull-right">
-                                    <button type="submit" class="btn btn-success" style="width:100px;"><i class="fa fa-comments-o"></i>Comment</button>
+                                    <button type="submit" class="btn btn-info" style="width:100px;"><i class="fa fa-comments-o"></i>Comment</button>
                                 </div>
                                 <div class="col-xs-4 col-md-2 pull-right">
                                     <button type="button" class="btn btn-default" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
