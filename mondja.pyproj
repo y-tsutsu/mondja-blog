@@ -31,6 +31,9 @@
   <ItemGroup>
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
+    <Compile Include="app\pydenticon_wrapper.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\tests.py" />
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
@@ -73,6 +76,7 @@
     <Folder Include="posts\" />
     <Folder Include="static\" />
     <Folder Include="static\media\" />
+    <Folder Include="static\media\identicon\" />
     <Folder Include="static\media\photo_images\" />
     <Folder Include="static\static-only\" />
     <Folder Include="static\static\" />
@@ -96,6 +100,7 @@
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="runtime.txt" />
+    <Content Include="static\media\identicon\sample.png" />
     <Content Include="static\static\bootstrap\css\blog.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css.map" />
