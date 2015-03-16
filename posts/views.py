@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from datetime import datetime
 from posts.models import Post, Comment
 from posts.forms import PostForm, CommentForm
+from app.pydenticon_wrapper import create_identicon
 
 def detail(request, id):
     post = Post.objects.get(id = id)
@@ -24,6 +25,8 @@ def detail(request, id):
             find = True
 
         if not find: new_post = p
+
+    create_identicon(post.user.username)
 
     return render(
         request,
