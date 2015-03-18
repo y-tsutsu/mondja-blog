@@ -13,6 +13,8 @@ Djangoを使ったシンプルなBlogアプリ（Python Tools for Visual Studio�
 * whitenoise==1.0.6
 * psycopg2==2.5.2
 * cloudinary==1.0.21
+* pydenticon==0.2
+* pytz==2014.10 
 
 # Run
 ~~~
