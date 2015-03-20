@@ -3,7 +3,9 @@
 {% block main%}
 
 {% if form.errors %}
-<h3 class="bg-danger">Please type a correct password.</h3>
+<div class="alert alert-danger" role="alert">
+    Please type a correct password.
+</div>
 {% endif %}
 
 <div class="panel panel-primary">
