@@ -81,9 +81,7 @@ def delete_entry(request, id):
     if request.method == 'POST':
         post.delete()
 
-        new_post = PostForm(request.POST or None, instance = post)
-
-        return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/')
 
 @user_passes_test(lambda u: u.is_superuser)
 def comment_entry(request, id):

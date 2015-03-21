@@ -20,8 +20,8 @@ def add_image(request):
         image_form = PhotoImageForm(request.POST or None, request.FILES or None)
 
         if image_form.is_valid():
-            new_image_form = image_form.save(commit = False)
-            new_image_form.save()
+            new_image = image_form.save(commit = False)
+            new_image.save()
 
     return HttpResponseRedirect('/galleries/')
 
