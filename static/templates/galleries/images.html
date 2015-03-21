@@ -30,13 +30,13 @@
                             </div>
                             <div class="modal-footer">
                                 <div class="row">
-                                    <form method="post" action="{% url 'delete_image' item.id %}" class="col-xs-4 col-md-2 pull-right">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</button>
-                                    </form>
                                     <form class="col-xs-4 col-md-2 pull-right">
                                         {% csrf_token %}
                                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
+                                    </form>
+                                    <form method="post" action="{% url 'delete_image' item.id %}" class="col-xs-4 col-md-2 pull-right">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</button>
                                     </form>
                                 </div>
                             </div>
