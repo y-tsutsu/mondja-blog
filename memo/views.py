@@ -6,6 +6,8 @@ from memo.models import Memo, Tag
 from memo.forms import MemoForm, TagForm
 
 def memo(request):
+    all_memo = Memo.objects.all()
+
     return render(
         request,
         'memo/memo.html',

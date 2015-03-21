@@ -2,10 +2,12 @@
 
 {% block main%}
 
+{% load markdown_deux_tags %}
+
 <style>
     #social-icon a { margin: 0 5px 5px 0; padding: 0; color: #fff; }
     #social-icon i { width: 50px; height: 50px; margin: 0; border-radius: 50%; background: #698aab; line-height: 50px; text-align: center; }
-    #social-icon i:before { padding 0; line-height: 50px; }
+    #social-icon i:before { padding: 0; line-height: 50px; }
     #social-icon a:hover i { background: #84a2d4; }
 </style>
 
@@ -55,16 +57,16 @@
     </div>
 </form>
 
-<div class="well" style="background-color:gainsboro; color:dimgray">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
-</div>
+{% for item in all_memo %}
 
-<div class="well" style="background-color:gainsboro; color:dimgray">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
-</div>
+    <div class="well" style="background-color:gainsboro; color:dimgray">
+        <h2>{{item.title}}</h2>
+        <hr />
+        <div class="well" style="background-color:ghostwhite; color:dimgray">
+            <p>{{ item.content | markdown | linebreaksbr }}</p>
+        </div>
+    </div>
 
-<div class="well" style="background-color:gainsboro; color:dimgray">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
-</div>
+{% endfor%}
 
 {% endblock %}
