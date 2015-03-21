@@ -37,20 +37,20 @@
             </form>
             <form method="post" action="{% url 'delete_entry' post.id %}" class="col-xs-3 col-md-2">
                 {% csrf_token %}
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="width:80px;">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete" style="width:80px;">
                     <i class="fa fa-trash-o"></i>Delete
                 </button>
             </form>
             <form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-3 col-md-2">
                 {% csrf_token %}
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2" style="width:100px;">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalComment" style="width:100px;">
                     <i class="fa fa-comments-o"></i>Comment
                 </button>
             </form>
         </div>
 
         <!-- 削除確認ダイアログ -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" id="myModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -79,7 +79,7 @@
         <!-- コメント記入ダイアログ -->
         <form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-5 col-md-3 pull-right">
             {% csrf_token %}
-            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
