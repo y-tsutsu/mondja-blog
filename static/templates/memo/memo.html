@@ -2,6 +2,70 @@
 
 {% block main%}
 
-<h1>_memo_memo_</h1>
+<style>
+    #social-icon a { margin: 0 5px 5px 0; padding: 0; color: #fff; }
+    #social-icon i { width: 50px; height: 50px; margin: 0; border-radius: 50%; background: #698aab; line-height: 50px; text-align: center; }
+    #social-icon i:before { padding 0; line-height: 50px; }
+    #social-icon a:hover i { background: #84a2d4; }
+</style>
+
+<div id="social-icon" class="clear row" style="text-align:center; margin-bottom:30px">
+    <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalEdit"><i class="fa fa-pencil fa-2x"></i></a></div>
+    <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalBook"><i class="fa fa-book fa-2x"></i></a></div>
+    <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalSearch"><i class="fa fa-search fa-2x" ></i></a></div>
+    <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalTags"><i class="fa fa-tags fa-2x"></i></a></div>
+</div>
+
+<form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-5 col-md-3 pull-right">
+    {% csrf_token %}
+    <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color:whitesmoke">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">The Mondja Blog　　_memo_memo_</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="id_title">Title:</label>
+                        <input id="id_title" class="form-control" maxlength="200" name="title" type="text" placeholder="Type a title" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="id_title">Tags:</label>
+                        <input id="id_title" class="form-control" maxlength="200" name="tags" type="text" placeholder="Type a tags" />
+                    </div>
+                    <div class="form-group">
+                        <label for="id_title">Text:</label>
+                        <textarea cols="75" id="id_comment" class="form-control" name="comment" rows="12" style="resize:vertical" placeholder="Type a comment" required ></textarea>
+                    </div>
+                    <input type="hidden" name="post" value="{{post.id}}" id="id_user" />
+                    <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-2 pull-right">
+                            <button type="submit" class="btn btn-success" style="width:80px;"><i class="fa fa-save"></i>Save</button>
+                        </div>
+                        <div class="col-xs-4 col-md-2 pull-right">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="well" style="background-color:gainsboro; color:dimgray">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+</div>
+
+<div class="well" style="background-color:gainsboro; color:dimgray">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+</div>
+
+<div class="well" style="background-color:gainsboro; color:dimgray">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+</div>
 
 {% endblock %}
