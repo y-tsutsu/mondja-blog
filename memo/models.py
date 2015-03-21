@@ -10,12 +10,12 @@ from django.utils import timezone
 from django.contrib.auth import models as usermodels
 
 class Tag(models.Model):
-    name = models.TextField(max_length = 32)
+    name = models.TextField(max_length = 32, unique = True)
     pub_date = models.DateTimeField('date published', auto_now_add = True)
     user = models.ForeignKey(usermodels.User)
 
     def __str__(self):
-        return self.value
+        return self.name
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days = 1)
