@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'gunicorn',
     'posts',
     'galleries',
+    'memo',
 )
 
 # A sample logging configuration. The only tangible logging
