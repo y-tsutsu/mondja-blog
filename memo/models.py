@@ -29,7 +29,7 @@ class Memo(models.Model):
     content = models.TextField(max_length = 10000)
     pub_date = models.DateTimeField('date published', auto_now_add = True)
     user = models.ForeignKey(usermodels.User)
-    tags = models.ManyToManyField(Tag, null = True)
+    tags = models.ManyToManyField(Tag, blank = True)
 
     def __str__(self):
         return self.title

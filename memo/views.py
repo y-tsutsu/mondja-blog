@@ -2,6 +2,8 @@
 
 from django.shortcuts import *
 from django.contrib.auth.decorators import login_required, user_passes_test
+from memo.models import Memo, Tag
+from memo.forms import MemoForm, TagForm
 
 def memo(request):
     return render(
@@ -9,3 +11,33 @@ def memo(request):
         'memo/memo.html',
         context_instance = RequestContext(request, locals())
     )
+
+@user_passes_test(lambda u: u.is_superuser)
+def add_memo(request):
+    if request.method == 'POST':
+        memo_form = MemoForm(request.POST or None)
+
+        if memo_form.is_valid():
+            new_memo = memo_form.save(commit = False)
+            new_memo.save()
+
+            if memo_form.is_valid():
+                tags = request.POST['tags-text']
+            
+                for stag in [s.rstrip() for s in tags.split()]:
+                
+                    if len(Tag.objects.filter(name = stag)) == 0:
+                        tag = Tag(name = stag, user = request.user)
+                        tag_form = TagForm(instance = tag)
+
+                        if len(stag) <= 32:
+                            new_tag = tag_form.save(commit = False)
+                            new_tag.save()
+                            new_memo.tags.add(new_tag)
+                            new_memo.save()
+                    else:
+                        tag = Tag.objects.get(name = stag)
+                        new_memo.tags.add(tag)
+                        new_memo.save()
+
+    return HttpResponseRedirect('/memo/')

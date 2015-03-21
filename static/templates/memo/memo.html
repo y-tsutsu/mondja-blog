@@ -16,14 +16,14 @@
     <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalTags"><i class="fa fa-tags fa-2x"></i></a></div>
 </div>
 
-<form method="post" action="{% url 'comment_entry' post.id %}" class="col-xs-5 col-md-3 pull-right">
+<form method="post" action="{% url 'add_memo' %}" class="col-xs-5 col-md-3 pull-right">
     {% csrf_token %}
     <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" style="background-color:whitesmoke">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">The Mondja Blog　　_memo_memo_</h4>
+                    <h4 class="modal-title">The Mondja Blog　_memo_memo_</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -31,14 +31,13 @@
                         <input id="id_title" class="form-control" maxlength="200" name="title" type="text" placeholder="Type a title" required />
                     </div>
                     <div class="form-group">
-                        <label for="id_title">Tags:</label>
-                        <input id="id_title" class="form-control" maxlength="200" name="tags" type="text" placeholder="Type a tags" />
+                        <label for="id_tags">Tags:</label>
+                        <input id="id_tags" class="form-control" maxlength="200" name="tags-text" type="text" placeholder="Type a tags" />
                     </div>
                     <div class="form-group">
-                        <label for="id_title">Text:</label>
-                        <textarea cols="75" id="id_comment" class="form-control" name="comment" rows="12" style="resize:vertical" placeholder="Type a comment" required ></textarea>
+                        <label for="id_content">Text:</label>
+                        <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize:vertical" placeholder="Type a comment" required ></textarea>
                     </div>
-                    <input type="hidden" name="post" value="{{post.id}}" id="id_user" />
                     <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
                 </div>
                 <div class="modal-footer">
