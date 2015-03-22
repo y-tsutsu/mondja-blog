@@ -33,7 +33,7 @@ http://mondja.herokuapp.com
 
 # Link
 * http://www.python.jp
-* http://djangoproject.jp
+* http://django-docs-ja.readthedocs.org
 * http://getbootstrap.com
 * http://fortawesome.github.io/Font-Awesome/
 * https://www.heroku.com
