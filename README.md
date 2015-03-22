@@ -6,15 +6,18 @@ Djangoを使ったシンプルなBlogアプリ（Python Tools for Visual Studio�
 
 # Requirements
 * python==3.4.2
-* django==1.7.4
-* django-dotenv==1.3.0
-* dj-database-url==0.3.0
-* gunicorn==19.2.1
-* whitenoise==1.0.6
-* psycopg2==2.5.2
 * cloudinary==1.0.21
+* django==1.7.7
+* django-dotenv==1.3.0
+* django-markdown-deux==1.0.5
+* dj-database-url==0.3.0
+* gunicorn==19.3.0
+* markdown2==2.3.0
+* Pillow==2.7.0
+* psycopg2==2.5.2
 * pydenticon==0.2
 * pytz==2014.10 
+* whitenoise==1.0.6
 
 # Run
 ~~~
