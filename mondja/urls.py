@@ -13,6 +13,9 @@ from django.conf.urls import include
 from django.contrib import admin
 admin.autodiscover()
 
+from django.conf import settings
+from django.views.generic import RedirectView
+
 from mondja import settings
 
 urlpatterns = patterns('',
@@ -39,6 +42,9 @@ urlpatterns = patterns('',
 
     # MEDIA_ROOT
     (r'media/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.MEDIA_ROOT}),
+
+    # favicon
+    url(r'^favicon\.ico$', RedirectView.as_view(url = '/static/images/favicon.ico')),
 )
 
 urlpatterns += patterns('',

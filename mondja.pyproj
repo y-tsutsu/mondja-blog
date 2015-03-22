@@ -160,7 +160,7 @@
     <Content Include="static\static\images\azarashi.png" />
     <Content Include="static\static\images\cat.png" />
     <Content Include="static\static\images\profile.png" />
-    <Content Include="static\static\images\python.ico" />
+    <Content Include="static\static\images\favicon.ico" />
     <Content Include="static\templates\about.html" />
     <Content Include="static\templates\base.html" />
     <Content Include="static\templates\galleries\images.html" />
