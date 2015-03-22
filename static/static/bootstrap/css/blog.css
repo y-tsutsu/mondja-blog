@@ -3,7 +3,7 @@
  */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: 'Yu Gothic';
   color: #555;
 }
 
@@ -14,7 +14,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin-top: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Yu Gothic';
   font-weight: normal;
   color: #333;
 }
@@ -85,8 +85,10 @@ h6, .h6 {
 .blog-title {
   margin-top: 30px;
   margin-bottom: 0;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: normal;
+  font-family: 'Yu Gothic';
+  color: #2a4073
 }
 .blog-description {
   font-size: 20px;
@@ -100,6 +102,7 @@ h6, .h6 {
 
 .blog-main {
   font-size: 18px;
+  font-family: 'Yu Gothic';
   line-height: 1.5;
 }
 
@@ -142,7 +145,7 @@ h6, .h6 {
 }
 .blog-post-title {
   margin-bottom: 5px;
-  font-size: 40px;
+  font-size: 32px;
 }
 .blog-post-meta {
   margin-bottom: 20px;
