@@ -1,8 +1,8 @@
 # mondja
-Monja blog with Django
+mondja with Django ( ..)φ
 
 # Note
-Djangoを使ったシンプルなBlogアプリ（Python Tools for Visual Studio）
+Djangoを使ったシンプルなWebアプリ（Python Tools for Visual Studio）
 
 # Requirements
 * python==3.4.2
