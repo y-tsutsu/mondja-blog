@@ -20,6 +20,7 @@
         <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalTags"><i class="fa fa-tags fa-2x"></i></a></div>
     </div>
 
+    <!-- 編集ダイアログ -->
     <form method="post" action="{% url 'add_memo' %}" class="col-xs-5 col-md-3 pull-right">
         {% csrf_token %}
         <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -63,12 +64,18 @@
 
 {% for item in all_memo %}
 
-    <div class="well" style="background-color:gainsboro; color:dimgray">
-        <h2>{{item.title}}</h2>
+    <div class="well" style="background-color: #1c305c">
+        <h1 class="memo-header">
+            <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="32" style="margin-top:-2px; vertical-align:middle" />
+            {{item.title}}
+        </h1>
         <hr />
-        <div class="well" style="background-color:ghostwhite; color:dimgray">
-            <p>{{ item.content | markdown | linebreaksbr }}</p>
+        <div class="alert alert-success markdown-body" role="alert" style="background-color: #eaedf7">
+            {{ item.content | markdown | linebreaksbr }}
         </div>
+        {% for tag in item.tags.all %}
+            <span class="{{tag.get_label_classname}}">{{ tag }}</span>
+        {% endfor %}
     </div>
 
 {% endfor%}

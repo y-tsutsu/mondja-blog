@@ -20,6 +20,21 @@ class Tag(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days = 1)
 
+    def get_label_classname(self):
+        n = hash(self)
+        if n % 6 == 0:
+            return 'label label-default'
+        elif n % 6 == 1:
+            return 'label label-primary'
+        elif n % 6 == 2:
+            return 'label label-success'
+        elif n % 6 == 3:
+            return 'label label-info'
+        elif n % 6 == 4:
+            return 'label label-warning'
+        else:
+            return 'label label-danger'
+
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'

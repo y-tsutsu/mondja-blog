@@ -92,6 +92,8 @@
     <Folder Include="static\static\font-awesome\less\" />
     <Folder Include="static\static\font-awesome\scss\" />
     <Folder Include="static\static\images\" />
+    <Folder Include="static\static\my-style\" />
+    <Folder Include="static\static\my-style\css\" />
     <Folder Include="static\templates\" />
     <Folder Include="static\templates\galleries\" />
     <Folder Include="static\templates\memo\" />
@@ -161,6 +163,7 @@
     <Content Include="static\static\images\cat.png" />
     <Content Include="static\static\images\profile.png" />
     <Content Include="static\static\images\favicon.ico" />
+    <Content Include="static\static\my-style\css\my-style.css" />
     <Content Include="static\templates\about.html" />
     <Content Include="static\templates\base.html" />
     <Content Include="static\templates\galleries\images.html" />

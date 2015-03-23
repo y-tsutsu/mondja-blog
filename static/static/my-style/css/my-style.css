@@ -1,0 +1,41 @@
+﻿.memo-header {
+    font-family:'Yu Gothic';
+    font-size: 23px;
+    color: #eaf4fc;
+}
+
+.memo-body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 16px;
+    color: #1c305c;
+}
+
+h1, .memo-body {
+    font-size: 24px;
+}
+
+h2, .memo-body {
+    font-size: 20px;
+}
+
+h3, .memo-body {
+    font-size: 16px;
+}
+
+h4, .memo-body {
+    font-size: 16px;
+}
+
+h5, .memo-body {
+    font-size: 16px;
+}
+
+h6, .memo-body {
+    font-size: 16px;
+}
+
+br, .memo-body {
+    padding: -20px;
+    margin: -20px;
+}
