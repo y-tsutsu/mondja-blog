@@ -9,10 +9,9 @@ Djangoを使ったシンプルなWebアプリ（Python Tools for Visual Studio�
 * cloudinary==1.0.21
 * django==1.7.7
 * django-dotenv==1.3.0
-* django-markdown-deux==1.0.5
 * dj-database-url==0.3.0
 * gunicorn==19.3.0
-* markdown2==2.3.0
+* Markdown==2.6.1
 * Pillow==2.7.0
 * psycopg2==2.5.2
 * pydenticon==0.2
