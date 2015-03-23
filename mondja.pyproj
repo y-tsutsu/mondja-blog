@@ -48,6 +48,8 @@
     <Compile Include="memo\admin.py" />
     <Compile Include="memo\forms.py" />
     <Compile Include="memo\models.py" />
+    <Compile Include="memo\templatetags\myfilter.py" />
+    <Compile Include="memo\templatetags\__init__.py" />
     <Compile Include="memo\tests.py" />
     <Compile Include="memo\urls.py" />
     <Compile Include="memo\views.py" />
@@ -74,6 +76,7 @@
     <Folder Include="app\" />
     <Folder Include="galleries\" />
     <Folder Include="memo\" />
+    <Folder Include="memo\templatetags\" />
     <Folder Include="mondja\" />
     <Folder Include="posts\" />
     <Folder Include="static\" />

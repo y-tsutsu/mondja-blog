@@ -2,7 +2,7 @@
 
 {% block main%}
 
-{% load markdown_deux_tags %}
+{% load myfilter %}
 
 {% if user.is_superuser %}
 
@@ -71,7 +71,7 @@
         </h1>
         <hr />
         <div class="alert alert-success markdown-body" role="alert" style="background-color: #eaedf7">
-            {{ item.content | markdown | linebreaksbr }}
+            {{ item.content | mark2html | safe | linebreaksbr }}
         </div>
         {% for tag in item.tags.all %}
             <span class="{{tag.get_label_classname}}">{{ tag }}</span>
