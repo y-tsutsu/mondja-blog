@@ -11,10 +11,11 @@ Djangoを使ったシンプルなWebアプリ（Python Tools for Visual Studio�
 * django-dotenv==1.3.0
 * dj-database-url==0.3.0
 * gunicorn==19.3.0
-* Markdown==2.6.1
+* markdown2==2.3.0
 * Pillow==2.7.0
 * psycopg2==2.5.2
 * pydenticon==0.2
+* Pygments==2.0.2
 * pytz==2014.10 
 * whitenoise==1.0.6
 
