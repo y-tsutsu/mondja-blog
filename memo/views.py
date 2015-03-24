@@ -6,7 +6,7 @@ from memo.models import Memo, Tag
 from memo.forms import MemoForm, TagForm
 
 def memo(request):
-    all_memo = Memo.objects.all()
+    all_memo = Memo.objects.all().order_by('-pub_date')
 
     return render(
         request,
