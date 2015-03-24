@@ -135,7 +135,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'gunicorn',
-    'markdown',
+    'markdown2',
     'posts',
     'galleries',
     'memo',
