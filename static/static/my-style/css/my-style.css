@@ -1,18 +1,16 @@
 ﻿.memo-header {
     font-family: 'Yu Gothic', Meiryo, sans-serif;
-    font-size: 23px;
-    color: #eaf4fc;
+    font-size: 28px;
+    color: #2a4073;
 }
 
 .memo-body {
-    padding: 0px;
-    margin: 0px;
     font-size: 16px;
-    color: #1c305c;
+    color: #2a4073;
 }
 
 .memo-body h1 {
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .memo-body h2 {
@@ -20,11 +18,11 @@
 }
 
 .memo-body h3 {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .memo-body h4 {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .memo-body h5 {
