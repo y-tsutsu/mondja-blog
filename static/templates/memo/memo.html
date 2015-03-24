@@ -20,7 +20,7 @@
         <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalTags"><i class="fa fa-tags fa-2x"></i></a></div>
     </div>
 
-    <!-- 編集ダイアログ -->
+    <!-- 追加ダイアログ -->
     <form method="post" action="{% url 'add_memo' %}" class="col-xs-5 col-md-3 pull-right">
         {% csrf_token %}
         <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -64,18 +64,94 @@
 
 {% for item in all_memo %}
 
-    <div class="well" style="background-color: #1c305c">
-        <h1 class="memo-header">
-            <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="32" style="margin-top:-2px; vertical-align:middle" />
-            {{item.title}}
-        </h1>
+    <div class="well" style="background-color: #b2cbe4">
+        <div class="memo-header row">
+            <h1 class="memo-header col-md-6">
+                <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="32" style="margin-top:-6px; vertical-align:middle" />
+                {{item.title}}
+            </h1>
+            <div class="memo-header col-md-4" style="font-size:14px; color:#556b2f; margin-top:5px; vertical-align:middle">
+                <i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}
+            </div>
+            <div class="memo-header col-md-2" style="font-size:14px; margin-top:4px; vertical-align:middle;">
+                <button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#myModalEdit{{item.id}}"><i class="fa fa-edit fa fa-fw"></i></button>
+                <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target="#myModalDelete{{item.id}}"><i class="fa fa-trash-o fa fa-fw"></i></button>
+            </div>
+        </div>
         <hr />
-        <div class="alert alert-success markdown-body" role="alert" style="background-color: #eaedf7">
+        <div class="alert alert-success memo-body" role="alert" style="background-color: #eaedf7">
             {{ item.content | mark2html | safe }}
         </div>
         {% for tag in item.tags.all %}
-            <span class="{{tag.get_label_classname}}">{{ tag }}</span>
+            <span class="{{ tag.get_label_classname }}">{{ tag }}</span>
         {% endfor %}
+    </div>
+
+    <!-- 編集ダイアログ -->
+    <form method="post" action="{% url 'edit_memo' item.id %}" class="col-xs-5 col-md-3 pull-right">
+        {% csrf_token %}
+        <div class="modal fade" id="myModalEdit{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color:whitesmoke">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="id_title">Title:</label>
+                            <input id="id_title" class="form-control" maxlength="200" name="title" type="text" value="{{item.title}}" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="id_tags">Tags:</label>
+                            <input id="id_tags" class="form-control" maxlength="200" name="tags-text" type="text" placeholder="Type a tags" value="{{item.get_tags_str}}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="id_content">Text:</label>
+                            <textarea cols="75" id="id_content" class="form-control" name="content" rows="12" style="resize:vertical" placeholder="Type a comment" required >{{item.content}}</textarea>
+                        </div>
+                        <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-xs-4 col-md-2 pull-right">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
+                            </div>
+                            <div class="col-xs-4 col-md-2 pull-right">
+                                <button type="submit" class="btn btn-success" style="width:80px;"><i class="fa fa-save"></i>Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- 削除確認ダイアログ -->
+    <div class="modal fade" id="myModalDelete{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                </div>
+                <div class="modal-body">
+                    <p>メモを削除してもよろしいですか？</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <form class="col-xs-4 col-md-2 pull-right">
+                            {% csrf_token %}
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Cancel</button>
+                        </form>
+                        <form method="post" action="{% url 'delete_memo' item.id %}" class="col-xs-4 col-md-2 pull-right">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endfor%}

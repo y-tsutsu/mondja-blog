@@ -43,3 +43,46 @@ def add_memo(request):
                         new_memo.save()
 
     return HttpResponseRedirect('/memo/')
+
+@user_passes_test(lambda u: u.is_superuser)
+def edit_memo(request, id):
+    memo = Memo.objects.get(id = id)
+
+    if request.method == 'POST':
+        memo_form = MemoForm(request.POST or None, instance = memo)
+
+        if memo_form.is_valid():
+            new_memo = memo_form.save(commit = False)
+            new_memo.save()
+            new_memo.tags.clear()
+            new_memo.save()
+
+            if memo_form.is_valid():
+                tags = request.POST['tags-text']
+            
+                for stag in [s.rstrip() for s in tags.split()]:
+                
+                    if len(Tag.objects.filter(name = stag)) == 0:
+                        tag = Tag(name = stag, user = request.user)
+                        tag_form = TagForm(instance = tag)
+
+                        if len(stag) <= 32:
+                            new_tag = tag_form.save(commit = False)
+                            new_tag.save()
+                            new_memo.tags.add(new_tag)
+                            new_memo.save()
+                    else:
+                        tag = Tag.objects.get(name = stag)
+                        new_memo.tags.add(tag)
+                        new_memo.save()
+
+    return HttpResponseRedirect('/memo/')
+
+@user_passes_test(lambda u: u.is_superuser)
+def delete_memo(request, id):
+    memo = Memo.objects.get(id = id)
+
+    if request.method == 'POST':
+        memo.delete()
+
+    return HttpResponseRedirect('/memo/')
