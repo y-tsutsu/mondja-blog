@@ -4,9 +4,13 @@ from django.shortcuts import *
 from django.contrib.auth.decorators import login_required, user_passes_test
 from memo.models import Memo, Tag
 from memo.forms import MemoForm, TagForm
+from app.pydenticon_wrapper import create_identicon
 
 def memo(request):
     all_memo = Memo.objects.all().order_by('-pub_date')
+
+    for item in all_memo:
+        create_identicon(item.user.username)
 
     return render(
         request,
