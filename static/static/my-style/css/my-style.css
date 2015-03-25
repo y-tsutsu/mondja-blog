@@ -32,4 +32,8 @@
 .memo-body h6 {
     font-size: 16px;
 }
+
+.memo-body img {
+	max-width: 100%;
+	height: auto;
 }
