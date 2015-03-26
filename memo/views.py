@@ -89,4 +89,8 @@ def delete_memo(request, id):
     if request.method == 'POST':
         memo.delete()
 
+        for tag in Tag.objects.all():
+            if len(tag.memo_set.all()) == 0:
+                tag.delete()
+
     return HttpResponseRedirect('/memo/')
