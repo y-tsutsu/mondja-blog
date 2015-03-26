@@ -83,12 +83,22 @@ h6, .h6 {
   padding-bottom: 20px;
 }
 .blog-title {
-  margin-top: 30px;
+  margin-top: 23px;
   margin-bottom: 0;
-  font-size: 50px;
+  font-size: 38px;
   font-weight: normal;
   font-family: 'Yu Gothic', Meiryo, sans-serif;
   color: #2a4073
+}
+@media screen and (min-width: 480px) {
+  .blog-title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: normal;
+    font-family: 'Yu Gothic', Meiryo, sans-serif;
+    color: #2a4073
+  }
 }
 .blog-description {
   font-size: 20px;
@@ -144,8 +154,14 @@ h6, .h6 {
   margin-bottom: 60px;
 }
 .blog-post-title {
-  margin-bottom: 5px;
-  font-size: 32px;
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+@media screen and (min-width: 480px) {
+  .blog-post-title {
+    margin-bottom: 5px;
+    font-size: 32px;
+  }
 }
 .blog-post-meta {
   margin-bottom: 20px;
