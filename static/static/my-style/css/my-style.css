@@ -4,6 +4,10 @@
     color: #2a4073;
 }
 
+h1.memo-header {
+    word-break: break-all;
+}
+
 .memo-body {
     font-size: 16px;
     color: #2a4073;
@@ -38,4 +42,8 @@
     height: auto;
     display: block;
     margin: 0 auto;
+}
+
+.memo-body p {
+    word-break: break-all;
 }

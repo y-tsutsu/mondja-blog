@@ -15,7 +15,7 @@
     {% for item in all_posts %}
 
         <div class="blog-post">
-            <h4 class="blog-post-title" style="color:#4682b4;">
+            <h4 class="blog-post-title" style="color:#4682b4; word-break: break-all;">
                 <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="42" style="margin-top:-8px; vertical-align:middle" />
                 {{item}}
             </h4>
