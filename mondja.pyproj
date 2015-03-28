@@ -169,6 +169,7 @@
     <Content Include="static\static\images\profile.png" />
     <Content Include="static\static\images\favicon.ico" />
     <Content Include="static\static\mondja\js\jquery.bottom-1.0.js" />
+    <Content Include="static\static\mondja\js\mondja.js" />
     <Content Include="static\templates\about.html" />
     <Content Include="static\templates\base.html" />
     <Content Include="static\templates\galleries\images.html" />
