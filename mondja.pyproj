@@ -173,9 +173,11 @@
     <Content Include="static\templates\login.html" />
     <Content Include="static\templates\logout.html" />
     <Content Include="static\templates\memo\memo.html" />
+    <Content Include="static\templates\500.html" />
     <Content Include="static\templates\posts\add_entry.html" />
     <Content Include="static\templates\posts\detail.html" />
     <Content Include="static\templates\posts\edit_entry.html" />
+    <Content Include="static\templates\404.html" />
     <Content Include="static\templates\top.html" />
   </ItemGroup>
   <ItemGroup>

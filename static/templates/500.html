@@ -1,0 +1,17 @@
+﻿{% extends "base.html" %}
+
+{% block main%}
+
+<div class="alert alert-danger" role="alert" style="font-size: 38px;">
+    500
+</div>
+
+<div role="main">
+    <h3 style="margin-bottom: 13px">Server Error</h3>
+    <p>
+        The server encountered an internal error or misconfiguration and was unable to complete your request.
+        Here's a link to the <a href="{% url 'top' %}">homepage</a>. You know, just in case.
+    </p>
+</div>
+
+{% endblock %}

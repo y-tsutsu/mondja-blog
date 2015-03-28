@@ -1,0 +1,17 @@
+﻿{% extends "base.html" %}
+
+{% block main%}
+
+<div class="alert alert-danger" role="alert" style="font-size: 38px;">
+    404
+</div>
+
+<div role="main">
+    <h3 style="margin-bottom: 13px">Page not found</h3>
+    <p>
+        Looks like you followed a bad link. If you think it's our fault, please <a href="https://github.com/y-tsutsu/mondja">let us know</a>.
+        Here's a link to the <a href="{% url 'top' %}">homepage</a>. You know, just in case.
+    </p>
+</div>
+
+{% endblock %}
