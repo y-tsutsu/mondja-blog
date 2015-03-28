@@ -95,8 +95,9 @@
     <Folder Include="static\static\font-awesome\less\" />
     <Folder Include="static\static\font-awesome\scss\" />
     <Folder Include="static\static\images\" />
-    <Folder Include="static\static\my-style\" />
-    <Folder Include="static\static\my-style\css\" />
+    <Folder Include="static\static\mondja\" />
+    <Folder Include="static\static\mondja\css\" />
+    <Folder Include="static\static\mondja\js\" />
     <Folder Include="static\templates\" />
     <Folder Include="static\templates\galleries\" />
     <Folder Include="static\templates\memo\" />
@@ -126,7 +127,8 @@
     <Content Include="static\static\bootstrap\js\docs.min.js" />
     <Content Include="static\static\bootstrap\js\ie-emulation-modes-warning.js" />
     <Content Include="static\static\bootstrap\js\ie10-viewport-bug-workaround.js" />
-    <Content Include="static\static\bootstrap\js\jquery-1.11.2.min.js" />
+    <Content Include="static\static\mondja\css\mondja.css" />
+    <Content Include="static\static\mondja\js\jquery-1.11.2.min.js" />
     <Content Include="static\static\bootstrap\js\npm.js" />
     <Content Include="static\static\font-awesome\css\font-awesome.css" />
     <Content Include="static\static\font-awesome\css\font-awesome.min.css" />
@@ -166,7 +168,7 @@
     <Content Include="static\static\images\cat.png" />
     <Content Include="static\static\images\profile.png" />
     <Content Include="static\static\images\favicon.ico" />
-    <Content Include="static\static\my-style\css\my-style.css" />
+    <Content Include="static\static\mondja\js\jquery.bottom-1.0.js" />
     <Content Include="static\templates\about.html" />
     <Content Include="static\templates\base.html" />
     <Content Include="static\templates\galleries\images.html" />
