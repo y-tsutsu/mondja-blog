@@ -27,24 +27,23 @@ def add_memo(request):
             new_memo = memo_form.save(commit = False)
             new_memo.save()
 
-            if memo_form.is_valid():
-                tags = request.POST['tags-text']
-            
-                for stag in [s.rstrip() for s in tags.split()]:
-                
-                    if len(Tag.objects.filter(name = stag)) == 0:
-                        tag = Tag(name = stag, user = request.user)
-                        tag_form = TagForm(instance = tag)
+            tags = request.POST['tags-text']
 
-                        if len(stag) <= 32:
-                            new_tag = tag_form.save(commit = False)
-                            new_tag.save()
-                            new_memo.tags.add(new_tag)
-                            new_memo.save()
-                    else:
-                        tag = Tag.objects.get(name = stag)
-                        new_memo.tags.add(tag)
+            for stag in [s.rstrip() for s in tags.split()]:
+
+                if len(Tag.objects.filter(name = stag)) == 0:
+                    tag = Tag(name = stag, user = request.user)
+                    tag_form = TagForm(instance = tag)
+
+                    if is_valid_tag(stag):
+                        new_tag = tag_form.save(commit = False)
+                        new_tag.save()
+                        new_memo.tags.add(new_tag)
                         new_memo.save()
+                else:
+                    tag = Tag.objects.get(name = stag)
+                    new_memo.tags.add(tag)
+                    new_memo.save()
 
     return HttpResponseRedirect('/memo/')
 
@@ -61,24 +60,25 @@ def edit_memo(request, id):
             new_memo.tags.clear()
             new_memo.save()
 
-            if memo_form.is_valid():
-                tags = request.POST['tags-text']
-            
-                for stag in [s.rstrip() for s in tags.split()]:
-                
-                    if len(Tag.objects.filter(name = stag)) == 0:
-                        tag = Tag(name = stag, user = request.user)
-                        tag_form = TagForm(instance = tag)
+            tags = request.POST['tags-text']
 
-                        if len(stag) <= 32:
-                            new_tag = tag_form.save(commit = False)
-                            new_tag.save()
-                            new_memo.tags.add(new_tag)
-                            new_memo.save()
-                    else:
-                        tag = Tag.objects.get(name = stag)
-                        new_memo.tags.add(tag)
+            for stag in [s.rstrip() for s in tags.split()]:
+                
+                if len(Tag.objects.filter(name = stag)) == 0:
+                    tag = Tag(name = stag, user = request.user)
+                    tag_form = TagForm(instance = tag)
+
+                    if is_valid_tag(stag):
+                        new_tag = tag_form.save(commit = False)
+                        new_tag.save()
+                        new_memo.tags.add(new_tag)
                         new_memo.save()
+                else:
+                    tag = Tag.objects.get(name = stag)
+                    new_memo.tags.add(tag)
+                    new_memo.save()
+
+            clear_notused_tag()
 
     return HttpResponseRedirect('/memo/')
 
@@ -89,8 +89,16 @@ def delete_memo(request, id):
     if request.method == 'POST':
         memo.delete()
 
-        for tag in Tag.objects.all():
-            if len(tag.memo_set.all()) == 0:
-                tag.delete()
+        clear_notused_tag()
 
     return HttpResponseRedirect('/memo/')
+
+def is_valid_tag(tag):
+    ''' tagの文字長チェック '''
+    return len(tag) <= 32
+
+def clear_notused_tag():
+    ''' 不要なtagを削除 '''
+    for tag in Tag.objects.all():
+        if len(tag.memo_set.all()) == 0:
+            tag.delete()
