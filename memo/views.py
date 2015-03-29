@@ -7,7 +7,7 @@ from memo.forms import MemoForm, TagForm
 from app.pydenticon_wrapper import create_identicon
 
 def memo(request):
-    all_memo = Memo.objects.all().order_by('-pub_date')
+    all_memo = Memo.objects.all().order_by('-pub_date')[:100]
 
     for item in all_memo:
         create_identicon(item.user.username)
