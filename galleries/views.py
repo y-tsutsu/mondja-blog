@@ -6,7 +6,7 @@ from galleries.forms import PhotoImageForm
 from galleries.models import PhotoImage
 
 def images(request):
-    all_images = PhotoImage.objects.all()
+    all_images = PhotoImage.objects.all().order_by('pub_date')
 
     return render(
         request,
