@@ -7,7 +7,31 @@ from memo.forms import MemoForm, TagForm
 from app.pydenticon_wrapper import create_identicon
 
 def memo(request):
-    all_memo = Memo.objects.all().order_by('-pub_date')[:100]
+    types = request.GET.get('types')
+
+    if types == 'sort':
+        item1 = request.GET.get('item1')
+        if item1 is not None and request.GET.get('desc1') == 'on':
+            item1 = '-' + item1
+        item2 = request.GET.get('item2')
+        if item2 is not None and request.GET.get('desc2') == 'on':
+            item2 = '-' + item2
+        item3 = request.GET.get('item3')
+        if item3 is not None and request.GET.get('desc3') == 'on':
+            item3 = '-' + item3
+
+        sort_items = tuple(filter(lambda x: x is not None and x is not '', [item1, item2, item3]))
+
+        if len(sort_items) == 0:
+            all_memo = Memo.objects.all().order_by('-pub_date')[:100]
+        else:
+            all_memo = Memo.objects.all().order_by(*sort_items)[:100]
+    elif types == 'search':
+        pass
+    elif types == 'tags':
+        pass
+    else:
+         all_memo = Memo.objects.all().order_by('-pub_date')[:100]
 
     for item in all_memo:
         create_identicon(item.user.username)

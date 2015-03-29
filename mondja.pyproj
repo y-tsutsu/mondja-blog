@@ -113,6 +113,8 @@
     <Content Include="runtime.txt" />
     <Content Include="static\media\identicon\sample.png" />
     <Content Include="static\static\bootstrap\css\blog.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-select.css" />
+    <Content Include="static\static\bootstrap\css\bootstrap-select.min.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="static\static\bootstrap\css\bootstrap-theme.min.css" />
@@ -124,6 +126,8 @@
     <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="static\static\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\static\bootstrap\js\bootstrap-select.js" />
+    <Content Include="static\static\bootstrap\js\bootstrap-select.min.js" />
     <Content Include="static\static\bootstrap\js\bootstrap.js" />
     <Content Include="static\static\bootstrap\js\bootstrap.min.js" />
     <Content Include="static\static\bootstrap\js\docs.min.js" />
