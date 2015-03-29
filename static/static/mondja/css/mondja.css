@@ -47,23 +47,3 @@ h1.memo-header {
 .memo-body p {
     word-break: break-all;
 }
-
-#wrap {
-    width: 800px;
-    margin: 0 auto;
-}
-
-.box {
-    width: 150px;
-    height: 150px;
-    margin: 10px;
-    padding: 10px;
-    border: 3px dashed #CCCCCC;
-    float: left;
-}
-
-#loadimg {
-    padding-top: 50px;
-    clear: both;
-    text-align: center;
-}
