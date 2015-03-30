@@ -4,14 +4,14 @@
 
     <div class="blog-post">
         <h2 class="blog-post-title" style="color:#4682b4; word-break: break-all;">
-            <img src="{{MEDIA_URL}}identicon/{{post.user.username}}.png" class="img-rounded" width="42" style="margin-top:-8px; vertical-align:text-bottom" />
+            <img src="{{MEDIA_URL}}identicon/{{post.user.username}}.png" class="img-rounded" width="42" style="margin-top:-8px; vertical-align:middle" />
             {{post.title}}
         </h2>
         <p class="blog-post-meta"><i class="fa fa-calendar fa-lg"></i> {{post.pub_date}}</p>
 
         <hr />
 
-        <div class="blog-post-my" style="font-size:20px;">{{post.content | linebreaksbr}}</div> 
+        <div class="blog-post-my">{{post.content | linebreaksbr}}</div> 
 
         <hr />
 
@@ -112,7 +112,7 @@
 
         <div class="row">
             <div class="col-sm-12 col-xs-12">
-                <h3 class="blog-post-my" style="color:#CCC;">This is expressed by <strong>{{post.get_total}}</strong> letters.</h3>
+                <h3 class="blog-post-my" style="color:#999;">This is expressed by <strong>{{post.get_total}}</strong> letters.</h3>
             </div>
         </div>
 

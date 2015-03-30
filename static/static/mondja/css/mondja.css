@@ -1,6 +1,6 @@
 ﻿.memo-header {
     font-family: 'Yu Gothic', Meiryo, sans-serif;
-    font-size: 28px;
+    font-size: 25px;
     color: #2a4073;
 }
 
@@ -9,32 +9,32 @@ h1.memo-header {
 }
 
 .memo-body {
-    font-size: 16px;
+    font-size: 14px;
     color: #2a4073;
 }
 
 .memo-body h1 {
-    font-size: 22px;
-}
-
-.memo-body h2 {
     font-size: 20px;
 }
 
-.memo-body h3 {
+.memo-body h2 {
     font-size: 18px;
+}
+
+.memo-body h3 {
+    font-size: 16px;
 }
 
 .memo-body h4 {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .memo-body h5 {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .memo-body h6 {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .memo-body img {

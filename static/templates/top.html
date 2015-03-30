@@ -15,15 +15,15 @@
     {% for item in all_posts %}
 
         <div class="blog-post">
-            <h4 class="blog-post-title" style="color:#4682b4; word-break: break-all;">
+            <h2 class="blog-post-title" style="color:#4682b4; word-break: break-all;">
                 <img src="{{MEDIA_URL}}identicon/{{item.user.username}}.png" class="img-rounded" width="42" style="margin-top:-8px; vertical-align:middle" />
                 {{item}}
-            </h4>
+            </h2>
             <p class="blog-post-meta"><i class="fa fa-calendar fa-lg"></i> {{item.pub_date}}</p>
-            <p>{{ item.content | slice:"30" }}{% if item.is_over_length %}．．．{% endif %}</p>
+            <p>{{ item.content | slice:"50" }}{% if item.is_over_length %}．．．{% endif %}</p>
             <hr />
             <p class="blog-post-my" style="color:#556b2f;">
-                This is expressed by <strong>{{item.get_total}}</strong> letters. 
+                This is expressed by <strong>{{item.get_total}}</strong> letters.　
                 <a href="{% url 'detail' item.id %}"><i class="fa fa-eye"></i>See more</a>
             </p>
             <hr />
