@@ -1,6 +1,6 @@
 ﻿$(window).on('load', function () {
     $('.selectpicker').selectpicker({
-        size: 4,
+        size: 12,
         selectedText: 'cat'
     });
 });
