@@ -14,10 +14,10 @@
     </style>
 
     <div id="social-icon" class="clear row" style="text-align:center; margin-bottom:30px">
-        <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalEdit"><i class="fa fa-pencil fa-2x"></i></a></div>
-        <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalSort"><i class="fa fa-sort fa-2x"></i></a></div>
-        <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalSearch"><i class="fa fa-search fa-2x" ></i></a></div>
-        <div class="col-sm-3 col-xs-3"><a data-toggle="modal" data-target="#myModalTags"><i class="fa fa-tags fa-2x"></i></a></div>
+        <div class="col-md-3 col-xs-3"><a data-toggle="modal" data-target="#myModalEdit"><i class="fa fa-pencil fa-2x"></i></a></div>
+        <div class="col-md-3 col-xs-3"><a data-toggle="modal" data-target="#myModalSort"><i class="fa fa-sort fa-2x"></i></a></div>
+        <div class="col-md-3 col-xs-3"><a data-toggle="modal" data-target="#myModalSearch"><i class="fa fa-search fa-2x" ></i></a></div>
+        <div class="col-md-3 col-xs-3"><a data-toggle="modal" data-target="#myModalTags"><i class="fa fa-tags fa-2x"></i></a></div>
     </div>
 
     <!-- 追加ダイアログ -->
@@ -47,10 +47,10 @@
                     </div>
                     <div class="modal-footer">
                         <div class="row">
-                            <div class="col-xs-4 col-md-2 pull-right">
+                            <div class="col-md-2 col-xs-4 pull-right">
                                 <button type="button" class="btn btn-default" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
                             </div>
-                            <div class="col-xs-4 col-md-2 pull-right">
+                            <div class="col-md-2 col-xs-4 pull-right">
                                 <button type="submit" class="btn btn-success" style="width:80px;"><i class="fa fa-save"></i>Save</button>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" name="item1">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" name="sort1">
                                 <option value=""></option>
                                 <option value="title">タイトル</option>
                                 <option value="pub_date">日付</option>
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" name="item2">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" name="sort2">
                                 <option value=""></option>
                                 <option value="title">タイトル</option>
                                 <option value="pub_date">日付</option>
@@ -104,28 +104,20 @@
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" name="item3">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" name="sort_tag_id">
                                 <option value=""></option>
-                                <option value="title">タイトル</option>
-                                <option value="pub_date">日付</option>
-                                <option value="user">ユーザ</option>
+                                {% for item in all_tag %}
+                                    <option value="{{item.id}}">{{item.name}}</option>
+                                {% endfor%}
                             </select>
-                            <div class="btn-group col-md-3 col-xs-5 pull-left" data-toggle="buttons">
-                                <label class="btn btn-default active">
-                                    <input type="radio" name="asc3" id="option1" checked><i class="fa fa-sort-amount-asc fa-fw"></i>
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="desc3" id="option2"><i class="fa fa-sort-amount-desc fa-fw"></i>
-                                </label>
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <div class="row">
-                            <div class="col-xs-4 col-md-2 pull-right">
+                            <div class="col-md-2 col-xs-4 pull-right">
                                 <button type="button" class="btn btn-default" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
                             </div>
-                            <div class="col-xs-4 col-md-2 pull-right">
+                            <div class="col-md-2 col-xs-4 pull-right">
                                 <button type="submit" class="btn btn-success" style="width:80px;"><i class="fa fa-sort"></i>Sort</button>
                             </div>
                         </div>

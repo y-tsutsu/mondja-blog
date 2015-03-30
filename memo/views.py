@@ -10,22 +10,24 @@ def memo(request):
     types = request.GET.get('types')
 
     if types == 'sort':
-        item1 = request.GET.get('item1')
-        if item1 is not None and request.GET.get('desc1') == 'on':
-            item1 = '-' + item1
-        item2 = request.GET.get('item2')
-        if item2 is not None and request.GET.get('desc2') == 'on':
-            item2 = '-' + item2
-        item3 = request.GET.get('item3')
-        if item3 is not None and request.GET.get('desc3') == 'on':
-            item3 = '-' + item3
+        sort1 = request.GET.get('sort1')
+        if sort1 is not None and request.GET.get('desc1') == 'on':
+            sort1 = '-' + sort1
 
-        sort_items = tuple(filter(lambda x: x is not None and x is not '', [item1, item2, item3]))
+        sort2 = request.GET.get('sort2')
+        if sort2 is not None and request.GET.get('desc2') == 'on':
+            sort2 = '-' + sort2
+
+        sort_items = tuple(filter(lambda x: x is not None and x is not '', [sort1, sort2]))
+        
+        sort_tag_id = request.GET.get('sort_tag_id')
+
+        all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(id = sort_tag_id).memo_set.all()
 
         if len(sort_items) == 0:
-            all_memo = Memo.objects.all().order_by('-pub_date')[:100]
+            all_memo = all_memo.order_by('-pub_date')[:100]
         else:
-            all_memo = Memo.objects.all().order_by(*sort_items)[:100]
+            all_memo = all_memo.order_by(*sort_items)[:100]
     elif types == 'search':
         pass
     elif types == 'tags':
@@ -35,6 +37,8 @@ def memo(request):
 
     for item in all_memo:
         create_identicon(item.user.username)
+
+    all_tag = Tag.objects.all()
 
     return render(
         request,
