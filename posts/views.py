@@ -11,7 +11,7 @@ from app.pydenticon_wrapper import create_identicon
 
 def detail(request, id):
     post = Post.objects.get(id = id)
-    comments = Comment.objects.filter(post = post).order_by('pub_date')
+    comments = post.comment_set.all().order_by('pub_date')
 
     find = False
     new_post = None
