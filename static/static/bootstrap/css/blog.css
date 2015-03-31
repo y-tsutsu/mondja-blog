@@ -83,9 +83,9 @@ h6, .h6 {
   padding-bottom: 18px;
 }
 .blog-title {
-  margin-top: 20px;
+  margin-top: 22px;
   margin-bottom: 5px;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: normal;
   font-family: 'Yu Gothic', Meiryo, sans-serif;
   color: #2a4073
@@ -204,4 +204,13 @@ h3.blog-post-my {
 
 div.blog-post-my {
   word-break: break-all;
+}
+
+.blog-post-title p {
+    font-size: 25px;
+}
+@media screen and (min-width: 480px) {
+    .blog-post-title p {
+        font-size: 27px;
+    }
 }
