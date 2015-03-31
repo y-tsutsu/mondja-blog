@@ -58,6 +58,7 @@
             <a class="blog-nav-item {% ifequal request.path '/memo/' %} active {% endifequal %}" href="{% url 'memo' %}"><i class="fa fa-comment"></i>Memo</a>
             <a class="blog-nav-item {% ifequal request.path '/about/' %} active {% endifequal %}" href="/about/"><i class="fa fa-info-circle"></i>About</a>
             <a class="blog-nav-item {% ifequal request.path '/logout/' %} active {% endifequal %}" href="/logout/"><i class="fa fa-sign-out"></i>Log-out</a>
+            <img src="{{MEDIA_URL}}identicon/{{user.username}}.png" class="img-rounded" width="24" style="margin-top:-2px; margin-left:5px; vertical-align:middle" />
           {% else %}
             <a class="blog-nav-item {% ifequal request.path '/galleries/' %} active {% endifequal %}" href="{% url 'images' %}"><i class="fa fa-photo"></i>Gallery</a>
             <a class="blog-nav-item {% ifequal request.path '/memo/' %} active {% endifequal %}" href="{% url 'memo' %}"><i class="fa fa-comment"></i>Memo</a>
