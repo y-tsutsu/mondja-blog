@@ -4,7 +4,7 @@ from django.shortcuts import *
 from django.contrib.auth.decorators import login_required, user_passes_test
 from memo.models import Memo, Tag
 from memo.forms import MemoForm, TagForm
-from app.pydenticon_wrapper import create_identicon
+from mondja.pydenticon_wrapper import create_identicon
 
 def memo(request):
     types = request.GET.get('types')

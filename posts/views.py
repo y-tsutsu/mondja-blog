@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from datetime import datetime
 from posts.models import Post, Comment
 from posts.forms import PostForm, CommentForm
-from app.pydenticon_wrapper import create_identicon
+from mondja.pydenticon_wrapper import create_identicon
 
 def detail(request, id):
     post = Post.objects.get(id = id)

@@ -31,7 +31,7 @@
   <ItemGroup>
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
-    <Compile Include="app\pydenticon_wrapper.py">
+    <Compile Include="mondja\pydenticon_wrapper.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\tests.py" />

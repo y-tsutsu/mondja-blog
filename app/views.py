@@ -10,7 +10,7 @@ from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from posts.models import Post
-from app.pydenticon_wrapper import create_identicon
+from mondja.pydenticon_wrapper import create_identicon
 
 def top(request):
     all_posts = Post.objects.all().order_by('-pub_date')
