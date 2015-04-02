@@ -12,11 +12,11 @@ def memo(request):
 
     if types == 'sort':
         sort1 = request.GET.get('sort1')
-        if sort1 is not None and request.GET.get('desc1') == 'on':
+        if sort1 is not '' and request.GET.get('sort_op1') == 'desc':
             sort1 = '-' + sort1
 
         sort2 = request.GET.get('sort2')
-        if sort2 is not None and request.GET.get('desc2') == 'on':
+        if sort2 is not '' and request.GET.get('sort_op2') == 'desc':
             sort2 = '-' + sort2
 
         sort_items = tuple(filter(lambda x: x is not None and x is not '', [sort1, sort2]))
