@@ -2,6 +2,7 @@
 
 from django.shortcuts import *
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.db.models import Count
 from memo.models import Memo, Tag
 from memo.forms import MemoForm, TagForm
 from mondja.pydenticon_wrapper import create_identicon
@@ -38,7 +39,7 @@ def memo(request):
     for item in all_memo:
         create_identicon(item.user.username)
 
-    all_tag = Tag.objects.all()
+    all_tag = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')[:10]
 
     return render(
         request,
