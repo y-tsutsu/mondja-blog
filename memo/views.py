@@ -3,6 +3,7 @@
 from django.shortcuts import *
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Count
+from django.core.exceptions import ObjectDoesNotExist
 from memo.models import Memo, Tag
 from memo.forms import MemoForm, TagForm
 from mondja.pydenticon_wrapper import create_identicon
@@ -29,8 +30,29 @@ def memo(request):
             all_memo = all_memo.order_by('-pub_date')[:100]
         else:
             all_memo = all_memo.order_by(*sort_items)[:100]
+
     elif types == 'search':
-        pass
+        search_title = request.GET.get('search_title')
+        search_tag = request.GET.get('search_tag')
+        search_content = request.GET.get('search_content')
+
+        if search_tag is '':
+            all_memo = Memo.objects.all()
+        else:
+            try:
+                all_memo = Tag.objects.get(name = search_tag).memo_set.all()
+            except ObjectDoesNotExist:
+                all_memo = Memo.objects.filter(title = '')
+
+        if search_title is not '' and search_content is not '':
+            all_memo = all_memo.filter(title__icontains = search_title, content__icontains = search_content)
+        elif search_title is not '':
+            all_memo = all_memo.filter(title__icontains = search_title)
+        elif search_content is not '':
+            all_memo = all_memo.filter(content__icontains = search_content)
+        else:
+            pass
+
     elif types == 'tags':
         pass
     else:
