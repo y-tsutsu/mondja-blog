@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label for="id_tags">Tags:</label>
-                            <input id="id_tags" class="form-control" maxlength="200" name="tags-text" type="text" placeholder="Type tags" />
+                            <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text" placeholder="Type tags" />
                         </div>
                         <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
                     </div>
@@ -255,7 +255,7 @@
                         </div>
                         <div class="form-group">
                             <label for="id_tags">Tags:</label>
-                            <input id="id_tags" class="form-control" maxlength="200" name="tags-text" type="text" placeholder="Type a tags" value="{{item.get_tags_str}}" />
+                            <input id="id_tags" class="form-control" maxlength="32" name="tags-text" type="text" placeholder="Type a tags" value="{{item.get_tags_str}}" />
                         </div>
                         <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
                     </div>

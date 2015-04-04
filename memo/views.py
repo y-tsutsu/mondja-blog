@@ -158,7 +158,7 @@ def delete_memo(request, id):
 
 def is_valid_tag(tag):
     ''' tagの文字長チェック '''
-    return len(tag) <= 32
+    return len(tag) <= 10
 
 def clear_notused_tag():
     ''' 不要なtagを削除 '''
