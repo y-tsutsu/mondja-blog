@@ -21,19 +21,22 @@ class Tag(models.Model):
         return self.pub_date >= timezone.now() - datetime.timedelta(days = 1)
 
     def get_label_classname(self):
+        return 'label label-' + self.get_toggle_onstyle()
+
+    def get_toggle_onstyle(self):
         n = hash(self)
         if n % 6 == 0:
-            return 'label label-default'
+            return 'default'
         elif n % 6 == 1:
-            return 'label label-primary'
+            return 'primary'
         elif n % 6 == 2:
-            return 'label label-success'
+            return 'success'
         elif n % 6 == 3:
-            return 'label label-info'
+            return 'info'
         elif n % 6 == 4:
-            return 'label label-warning'
+            return 'warning'
         else:
-            return 'label label-danger'
+            return 'danger'
 
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True

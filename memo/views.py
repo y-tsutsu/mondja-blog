@@ -27,14 +27,14 @@ def memo(request):
         all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(id = sort_tag_id).memo_set.all()
 
         if len(sort_items) == 0:
-            all_memo = all_memo.order_by('-pub_date')[:100]
+            all_memo = all_memo.order_by('-pub_date')
         else:
-            all_memo = all_memo.order_by(*sort_items)[:100]
+            all_memo = all_memo.order_by(*sort_items)
 
     elif types == 'search':
         search_title = request.GET.get('search_title')
-        search_tag = request.GET.get('search_tag')
         search_content = request.GET.get('search_content')
+        search_tag = request.GET.get('search_tag')
 
         if search_tag is '':
             all_memo = Memo.objects.all()
@@ -54,14 +54,23 @@ def memo(request):
             pass
 
     elif types == 'tags':
-        pass
+        memos = []
+        for tid in request.GET.getlist('select_tag'):
+            tag = Tag.objects.get(id = tid)
+            for memo in tag.memo_set.all():
+                memos.append(memo)
+        all_memo = list(set(memos))
+
     else:
-         all_memo = Memo.objects.all().order_by('-pub_date')[:100]
+         all_memo = Memo.objects.all().order_by('-pub_date')
+
+    all_memo = all_memo[:100]
 
     for item in all_memo:
         create_identicon(item.user.username)
 
-    all_tag = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')[:10]
+    all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
+    top_ten_tags = all_tags[:10]
 
     return render(
         request,

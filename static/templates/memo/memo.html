@@ -106,7 +106,7 @@
                         <div class="row" style="margin-bottom: 10px">
                             <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" name="sort_tag_id">
                                 <option value=""></option>
-                                {% for item in all_tag %}
+                                {% for item in top_ten_tags %}
                                     <option value="{{item.id}}">{{item.name}}</option>
                                 {% endfor%}
                             </select>
@@ -151,7 +151,6 @@
                             <label for="id_tags">Tag:</label>
                             <input id="id_tags" class="form-control" maxlength="20" name="search_tag" type="text" placeholder="Type a tag" />
                         </div>
-                        <input type="hidden" name="user" value="{{user.id}}" id="id_user" />
                     </div>
                     <div class="modal-footer">
                         <div class="row">
@@ -167,6 +166,41 @@
             </div>
         </div>
         <input type="hidden" name="types" value="search" />
+    </form>
+
+    <!-- タグ一覧ダイアログ -->
+    <form method="get" action="{% url 'memo' %}">
+        {% csrf_token %}
+        <div class="modal fade" id="myModalTags" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color:whitesmoke">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">_mondja_py_( ..)φ</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            {% for item in all_tags %}
+                                <div class="col-md-3 col-xs-6" style="margin-bottom: 5px; text-align:center">
+                                    <input type="checkbox" data-toggle="toggle" data-on={{item.name}} data-off={{item.name}} data-onstyle={{item.get_toggle_onstyle}} data-size="small" data-width="100px" name="select_tag" value={{item.id}}>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-2 col-xs-4 pull-right">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" style="width:80px;"><i class="fa fa-times"></i>Cancel</button>
+                            </div>
+                            <div class="col-md-2 col-xs-4 pull-right">
+                                <button type="submit" class="btn btn-success" style="width:80px;"><i class="fa fa-tags"></i>Tags</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="types" value="tags" />
     </form>
 
 {% endif %}
