@@ -90,7 +90,7 @@
                         <div class="row" style="margin-bottom: 10px">
                             <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" data-live-search="true" name="sort_tag_id">
                                 <option value=""></option>
-                                {% for item in top_ten_tags %}
+                                {% for item in all_tags %}
                                     <option value="{{item.id}}">{{item.name}}</option>
                                 {% endfor%}
                             </select>
@@ -101,7 +101,7 @@
                                 {% if user.is_superuser %}
                                     <option value={{user.id}}>My user</option>
                                 {% endif %}
-                                {% for item in top_ten_users %}
+                                {% for item in all_users %}
                                     <option value="{{item.id}}">{{item.username}}</option>
                                 {% endfor%}
                             </select>

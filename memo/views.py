@@ -79,10 +79,7 @@ def memo(request):
         create_identicon(item.user.username)
 
     all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
-    top_ten_tags = all_tags[:10]
-
     all_users = usermodels.User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
-    top_ten_users = all_users[:10]
 
     return render(
         request,
