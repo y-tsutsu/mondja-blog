@@ -47,3 +47,7 @@ h1.memo-header {
 .memo-body p {
     word-break: break-all;
 }
+
+pre {
+    background-color: #23241f;
+}
