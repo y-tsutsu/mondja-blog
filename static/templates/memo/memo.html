@@ -72,42 +72,34 @@
                     </div>
                     <div class="modal-body">
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" name="sort1">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" data-header="Select a Sort Item" name="sort_item">
                                 <option value=""></option>
-                                <option value="title">タイトル</option>
                                 <option value="pub_date">日付</option>
-                                <option value="user">ユーザ</option>
+                                <option value="title">タイトル</option>
+                                <option value="content">本文</option>
                             </select>
                             <div class="btn-group col-md-3 col-xs-5 pull-left" data-toggle="buttons">
                                 <label class="btn btn-default active">
-                                    <input type="radio" name="sort_op1" value="asc" autocomplete="off" checked><i class="fa fa-sort-amount-asc fa-fw"></i>
+                                    <input type="radio" name="sort_op" value="asc" autocomplete="off" checked><i class="fa fa-sort-amount-asc fa-fw"></i>
                                 </label>
                                 <label class="btn btn-default">
-                                    <input type="radio" name="sort_op1" value="desc" autocomplete="off"><i class="fa fa-sort-amount-desc fa-fw"></i>
+                                    <input type="radio" name="sort_op" value="desc" autocomplete="off"><i class="fa fa-sort-amount-desc fa-fw"></i>
                                 </label>
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" name="sort2">
-                                <option value=""></option>
-                                <option value="title">タイトル</option>
-                                <option value="pub_date">日付</option>
-                                <option value="user">ユーザ</option>
-                            </select>
-                            <div class="btn-group col-md-3 col-xs-5 pull-left" data-toggle="buttons">
-                                <label class="btn btn-default active">
-                                    <input type="radio" name="sort_op2" value="asc" autocomplete="off" checked><i class="fa fa-sort-amount-asc fa-fw"></i>
-                                </label>
-                                <label class="btn btn-default">
-                                    <input type="radio" name="sort_op2" value="desc" autocomplete="off"><i class="fa fa-sort-amount-desc fa-fw"></i>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" name="sort_tag_id">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a Tag" name="sort_tag_id">
                                 <option value=""></option>
                                 {% for item in top_ten_tags %}
                                     <option value="{{item.id}}">{{item.name}}</option>
+                                {% endfor%}
+                            </select>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a User" name="sort_user_id">
+                                <option value=""></option>
+                                {% for item in top_ten_users %}
+                                    <option value="{{item.id}}">{{item.username}}</option>
                                 {% endfor%}
                             </select>
                         </div>

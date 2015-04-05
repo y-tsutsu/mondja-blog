@@ -2,6 +2,7 @@
 
 from django.shortcuts import *
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth import models as usermodels
 from django.db.models import Count
 from django.core.exceptions import ObjectDoesNotExist
 from memo.models import Memo, Tag
@@ -12,24 +13,21 @@ def memo(request):
     types = request.GET.get('types')
 
     if types == 'sort':
-        sort1 = request.GET.get('sort1')
-        if sort1 is not '' and request.GET.get('sort_op1') == 'desc':
-            sort1 = '-' + sort1
-
-        sort2 = request.GET.get('sort2')
-        if sort2 is not '' and request.GET.get('sort_op2') == 'desc':
-            sort2 = '-' + sort2
-
-        sort_items = tuple(filter(lambda x: x is not None and x is not '', [sort1, sort2]))
+        sort_item = request.GET.get('sort_item')
+        if sort_item is not '' and request.GET.get('sort_op') == 'desc':
+            sort_item = '-' + sort_item
         
         sort_tag_id = request.GET.get('sort_tag_id')
-
         all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(id = sort_tag_id).memo_set.all()
 
-        if len(sort_items) == 0:
+        sort_user_id = request.GET.get('sort_user_id')
+        if sort_user_id is not '':
+            all_memo = all_memo.filter(user = usermodels.User.objects.get(id = sort_user_id))
+
+        if sort_item is '':
             all_memo = all_memo.order_by('-pub_date')
         else:
-            all_memo = all_memo.order_by(*sort_items)
+            all_memo = all_memo.order_by(sort_item)
 
     elif types == 'search':
         search_title = request.GET.get('search_title')
@@ -74,6 +72,9 @@ def memo(request):
 
     all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
     top_ten_tags = all_tags[:10]
+
+    all_users = usermodels.User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
+    top_ten_users = all_users[:10]
 
     return render(
         request,
