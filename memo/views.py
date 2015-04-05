@@ -32,20 +32,20 @@ def memo(request):
     elif types == 'search':
         search_title = request.GET.get('search_title')
         search_content = request.GET.get('search_content')
-        search_tag = request.GET.get('search_tag')
-        search_user = request.GET.get('search_user')
+        search_tag_id = request.GET.get('search_tag_id')
+        search_user_id = request.GET.get('search_user_id')
 
-        if search_tag is '':
+        if search_tag_id is '':
             all_memo = Memo.objects.all()
         else:
             try:
-                all_memo = Tag.objects.get(name = search_tag).memo_set.all()
+                all_memo = Tag.objects.get(id = search_tag_id).memo_set.all()
             except ObjectDoesNotExist:
                 all_memo = Memo.objects.filter(title = '')
 
-        if search_user is not '':
+        if search_user_id is not '':
             try:
-                user = usermodels.User.objects.get(username = search_user)
+                user = usermodels.User.objects.get(id = search_user_id)
                 all_memo = all_memo.filter(user = user)
             except ObjectDoesNotExist:
                 all_memo = Memo.objects.filter(title = '')
