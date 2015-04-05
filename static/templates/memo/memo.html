@@ -72,7 +72,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" data-header="Select a Sort Item" name="sort_item">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-primary" data-header="Select a sort item" name="sort_item">
                                 <option value=""></option>
                                 <option value="pub_date">日付</option>
                                 <option value="title">タイトル</option>
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a Tag" name="sort_tag_id">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" name="sort_tag_id">
                                 <option value=""></option>
                                 {% for item in top_ten_tags %}
                                     <option value="{{item.id}}">{{item.name}}</option>
@@ -96,7 +96,7 @@
                             </select>
                         </div>
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a User" name="sort_user_id">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a user" name="sort_user_id">
                                 <option value=""></option>
                                 {% for item in top_ten_users %}
                                     <option value="{{item.id}}">{{item.username}}</option>
@@ -140,8 +140,8 @@
                             <input id="id_content" class="form-control" maxlength="20" name="search_content" type="text" placeholder="Type a content" />
                         </div>
                         <div class="form-group">
-                            <label for="id_tags">Tag:</label>
-                            <input id="id_tags" class="form-control" maxlength="20" name="search_tag" type="text" placeholder="Type a tag" />
+                            <label for="id_tag">Tag:</label>
+                            <input id="id_tag" class="form-control" maxlength="10" name="search_tag" type="text" placeholder="Type a tag" />
                         </div>
                     </div>
                     <div class="modal-footer">
