@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" name="sort_tag_id">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-info" data-header="Select a tag" data-live-search="true" name="sort_tag_id">
                                 <option value=""></option>
                                 {% for item in top_ten_tags %}
                                     <option value="{{item.id}}">{{item.name}}</option>
@@ -96,8 +96,11 @@
                             </select>
                         </div>
                         <div class="row" style="margin-bottom: 10px">
-                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a user" name="sort_user_id">
+                            <select class="selectpicker col-md-9 col-xs-7 pull-left" data-style="btn-warning" data-header="Select a user" data-live-search="true" name="sort_user_id">
                                 <option value=""></option>
+                                {% if user.is_superuser %}
+                                    <option value={{user.id}}>My user</option>
+                                {% endif %}
                                 {% for item in top_ten_users %}
                                     <option value="{{item.id}}">{{item.username}}</option>
                                 {% endfor%}
