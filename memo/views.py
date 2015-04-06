@@ -78,8 +78,9 @@ def memo(request):
     for item in all_memo:
         create_identicon(item.user.username)
 
-    all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
     all_users = usermodels.User.objects.annotate(count_memos = Count('memo')).order_by('-count_memos')
+    all_tags = Tag.objects.annotate(count_memos = Count('memo')).order_by('-count_memos', '-pub_date')
+    top32_tags = all_tags[:32]
 
     return render(
         request,
