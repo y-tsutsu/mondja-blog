@@ -14,7 +14,7 @@ from mondja.pydenticon_wrapper import create_identicon
 
 def top(request):
     all_posts = Post.objects.all().order_by('-pub_date')
-    paginator = Paginator(all_posts, 5)
+    paginator = Paginator(all_posts, 10)
     page = request.GET.get('page')
 
     try:
