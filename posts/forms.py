@@ -7,8 +7,10 @@ from posts.models import Post, Comment
 
 class CommentForm(forms.ModelForm):
     class Meta:
+        fields = "__all__" 
         model = Comment
 
 class PostForm(forms.ModelForm):
     class Meta:
+        fields = "__all__" 
         model = Post
