@@ -5,19 +5,18 @@ mondja with Django ( ..)φ
 Djangoを使ったシンプルなWebアプリ（Python Tools for Visual Studio）
 
 # Requirements
-* python==3.4.2
-* cloudinary==1.0.21
-* django==1.7.7
+* python==3.4.3
+* cloudinary==1.1.3
+* Django==1.8.3
 * django-dotenv==1.3.0
 * dj-database-url==0.3.0
 * gunicorn==19.3.0
 * markdown2==2.3.0
-* Pillow==2.7.0
-* psycopg2==2.5.2
+* Pillow==2.9.0
+* psycopg2==2.6.1
 * pydenticon==0.2
 * Pygments==2.0.2
-* pytz==2014.10 
-* whitenoise==1.0.6
+* whitenoise==2.0.2
 
 # Run
 ~~~
