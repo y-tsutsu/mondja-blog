@@ -16,7 +16,7 @@ def memo(request):
         sort_item = request.GET.get('sort_item')
         if sort_item is not '' and request.GET.get('sort_op') == 'desc':
             sort_item = '-' + sort_item
-        
+
         sort_tag_id = request.GET.get('sort_tag_id')
         all_memo = Memo.objects.all() if sort_tag_id is '' else Tag.objects.get(id = sort_tag_id).memo_set.all()
 
@@ -133,7 +133,7 @@ def edit_memo(request, id):
             tags = request.POST['tags-text']
 
             for stag in [s.rstrip() for s in tags.split()]:
-                
+
                 if len(Tag.objects.filter(name = stag)) == 0:
                     tag = Tag(name = stag, user = request.user)
                     tag_form = TagForm(instance = tag)

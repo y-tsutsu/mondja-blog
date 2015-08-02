@@ -7,5 +7,5 @@ from galleries.models import PhotoImage
 
 class PhotoImageForm(forms.ModelForm):
     class Meta:
-        fields = "__all__" 
+        fields = "__all__"
         model = PhotoImage

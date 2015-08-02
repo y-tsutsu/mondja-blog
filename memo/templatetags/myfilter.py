@@ -5,7 +5,7 @@ from django.template.defaultfilters import stringfilter
 import markdown2
 
 register = template.Library()
- 
+
 @register.filter
 @stringfilter
 def mark2html(value):
