@@ -24,9 +24,6 @@ python manage.py runserver
 ~~~
 Access to http://127.0.0.1:8000/
 
-# Demo
-http://mondja.herokuapp.com
-
 # License
 お好きにどうぞ．
 
