@@ -5,7 +5,7 @@ mondja with Django ( ..)φ
 Djangoを使ったシンプルなWebアプリ（Python Tools for Visual Studio）
 
 # Requirements
-* python==3.4.3
+* python==3.5.1
 * cloudinary==1.1.3
 * Django==1.8.3
 * django-dotenv==1.3.0
